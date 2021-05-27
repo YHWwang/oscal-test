@@ -1,0 +1,464 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: Avenir;
+    src: url('../font/ProximaNova-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: googleSans;
+    src: url('../font/GOOGLESANS-MEDIUM.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+/* -- reset -- */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+.main p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer,
+section,
+article,
+aside,
+nav,
+address,
+figure,
+figcaption,
+menu,
+details {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption,
+th {
+    text-align: left;
+    font-weight: normal;
+}
+
+em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+.main a,
+.main a:hover {
+    text-decoration: none;
+}
+
+a,
+button {
+    color: #000;
+    cursor: pointer;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.1;
+    color: inherit;
+}
+
+/* -- reset end -- */
+
+.main { 
+    font-family:Avenir;
+    font-size: 1rem;
+}
+
+#AMain {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: transparent;
+    margin-top: 60px;
+    background-color: #F5F5F5;
+}
+
+.big-img {
+    width: 100%;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+.mainContent{
+    padding-bottom: 5vw;
+}
+.mainContent .newsCon .time_line {
+    font-size: 36px;
+        font-weight: bold;
+    text-align: center;
+    padding-top: 5vw;
+    padding-bottom: 1vw;
+}
+
+.mainContent .newsBox,
+.mainContent .newsPagination {
+    width: 80%;
+    margin: 0 auto;
+}
+.mainContent .newsCon ul li{
+    padding: 3vw 0;
+}
+.mainContent .newsCon .content {
+    font-size: 0;
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContent .newsCon .content .left {
+    width: 480px;
+    height: 350px;
+}
+
+.mainContent .newsCon .content .left img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainContent .newsCon .content .right {
+    width: 60%;
+    position: relative;
+    background-color: white;
+    padding: 1vw 2.5vw;
+    margin-left: -2.5vw;
+}
+
+.mainContent .newsCon .content .time {
+    font-size: 16px;
+    color: gray;
+}
+
+.mainContent .newsCon .content .tit {
+    color: #000;
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 1.3;
+    padding: 1vw 0 0 0;
+}
+
+.mainContent .newsCon .content .msg {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    color: gray;
+    margin: 1vw 0 2vw 0;
+    line-height: 1.3;
+}
+
+.mainContent .newsCon .content .other {
+    float: right;
+    font-size: 18px;
+    color: #58b1ff
+}
+
+.mainContent .newsCon .content .more {
+    font-size: 18px;
+    text-decoration: underline;
+    color: #58b1ff
+}
+
+.newsPagination {
+    display: block;
+    padding: 5vw 0 3vw 0;
+    text-align: center;
+}
+
+.newsPagination .page-item.disabled .page-link
+.newsPagination .page-item:last-child .page-link {
+    background-color: transparent;
+}
+.newsPagination .page-link:hover {
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+.newsPagination .page-item.disabled .page-link{
+background: transparent;
+color: #000;
+}
+.newsPagination .page-link {
+    background-color: transparent;
+    border: none;
+    color: #000;
+}
+
+.newsPagination ul {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.newsPagination li:nth-child(1) {
+    margin-right: 3vw;
+}
+
+.newsPagination li:last-child {
+    margin-left: 3vw;
+}
+
+.newsPagination li {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 1px;
+    width: 40px;
+    vertical-align: middle;
+    height: 40px;
+    font-family: Avenir;
+    position: relative;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.newsPagination li.active:not(.newsPagination li:last-child) {
+    background: transparent;
+    border: 1px solid #000;
+}
+
+.newsPagination .page-item.active .page-link {
+    z-index: 3;
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0;
+        font-weight: bold;
+    padding: 0;
+    line-height: normal;
+}
+
+.newsPagination .icon-arr {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    vertical-align: middle;
+    font-size: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.newsContentBox {
+    background-color: white;
+    width: 70%;
+    min-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -19vw;
+    text-align: center;
+    padding: 3vw 5vw;
+}
+
+.newsContentBox .word {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 3vw;
+}
+
+.newsContentBox .word .time,
+.newsContentBox .word .msg {
+    font-size: 18px;
+    color: gray;
+    line-height: 1.3;
+
+}
+.newsContentBox .word .msg {
+    color: rgb(85, 85, 85);
+}
+.newsContentBox .word .msg{
+    text-align: left;
+    margin: 1vw;
+}
+.newsContentBox .word .title ,.relatedNews .title{
+    font-size: 48px;
+    line-height: 1.3;
+    margin: 1vw 0 2vw;
+        font-weight: bold;
+}
+.newsContentBox .word .title{
+    font-size: 38px;
+}
+.relatedNews{
+    width: 70%;
+    min-width: 980px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 4vw;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+.relatedNews .title{
+    margin-top: 0;
+    text-align: center;
+    color: #000;
+    padding-top: 5vw;
+}
+.relatedNews ul{
+    font-size: 0;
+    position: relative;
+}
+.relatedNews ul li{
+    vertical-align: top;
+    width: 31.33%;
+    display: inline-block;
+    margin: 0 1%;
+}
+.relatedNews .msg{
+    max-height: 92px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.relatedNews .tit{
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #000;
+    line-height: 1.2;
+    margin: .5vw 0 1vw 0;
+        font-weight: bold;
+}
+.relatedNews .time{
+    font-size: 14px;
+    font-family: googleSans;
+}
+.relatedNews p{
+    font-size: 16px;
+    color: gray;
+    line-height: 1.3;
+    text-align: left;
+}
+.relatedNews .box .bottom{
+    position: relative;
+    margin: 1vw;
+    padding: 1vw;
+    padding-bottom: 3vw;
+    margin-top: -1vw;
+    background-color: white;
+    transition: all .8s;
+}
+.relatedNews .box .bottom:hover{
+    box-shadow:5px 5px 5px 5px #dddddd;
+    margin-top: -10px;
+}
+.relatedNews .box .bottom .relatedNews_tit .other_news{
+    float: right;
+    color: #58b1ff;
+}
+
+
+
+
+
+/* end */
+
+@media screen and (max-width: 800px) {}
+
+@media screen and (max-width:1500px)and (min-width:1000px) {}
+
+@media screen and (max-width:1200px)and (min-width:1000px) {}
+
+@media screen and (max-width:1000px) {
+    #AMain{
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width:1000px)and (min-width:800px) {
+    .mainContent .newsBox, .mainContent .newsPagination {
+        width: 96%;
+    }
+    .newsContentBox,.relatedNews{
+        width: 98%;
+        min-width: auto;
+    }
+    
+}

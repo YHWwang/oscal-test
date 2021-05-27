@@ -1,0 +1,547 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: Avenir;
+    src: url('../font/ProximaNova-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -- reset -- */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+.main p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer,
+section,
+article,
+aside,
+nav,
+address,
+figure,
+figcaption,
+menu,
+details {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption,
+th {
+    text-align: left;
+    font-weight: normal;
+}
+
+em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+.main a,
+.main a:hover {
+    text-decoration: none;
+}
+
+.main a,
+.main button {
+    color: #000;
+    cursor: pointer;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.1;
+    color: inherit;
+}
+
+/* -- reset end -- */
+
+.main {
+    font-family: Avenir;
+    font-size: 1rem;
+}
+
+#AMain {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: transparent;
+    margin-top: 60px;
+    background-color: #F5F5F5;
+}
+
+.big-img {
+    width: 100%;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+.supportBox .bannerTop {
+    position: relative;
+}
+
+.supportBox .bannerTop .word {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 8vw;
+}
+
+.supportBox .bannerTop .word .tit {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.supportBox .bannerTop .word .msg {
+    font-size: 30px;
+    line-height: 1.3;
+}
+
+.supportBox .productBox {
+    position: relative;
+    text-align: center;
+    padding: 5vw 0;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 980px;
+}
+
+.supportBox .productBox .tit {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.supportBox .productBox .msg {
+    font-size: 18px;
+    padding-top: 1vw;
+    line-height: 1.3;
+}
+
+.supportBox .productBox .pro-sort-ul {
+    font-size: 0;
+    padding-top: 4vw;
+    position: relative;
+}
+
+.supportBox .productBox .pro-sort-ul li {
+    width: 187px;
+    height: 189px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.supportBox .productBox .pro-sort-ul li p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.supportBox .productBox .pro-sort-ul li img {
+    transition: all .5s;
+}
+
+.supportBox .productBox .pro-sort-ul li:hover img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.supportBox .productBox .pro-sort-ul li:hover p {
+    color: #d0021b;
+}
+
+.supportBox .productBox .faq_box {
+    display: none;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    margin-top: 4vw;
+}
+
+.supportBox .productBox .faq_box div {
+    width: 80%;
+    min-width: 768px;
+    font-size: 0;
+    margin: 0 auto;
+    padding-top: 4vw;
+}
+
+.supportBox .productBox .faq_box ul {
+    width: 29.33%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 4vw;
+    margin: 0 2%;
+}
+
+.supportBox .productBox .faq_box ul li {
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+    text-align: left;
+    padding: 0 2vw 0 0;
+    display: inline-block;
+    margin: 1vw 0;
+}
+
+.supportBox .productBox .faq_box ul li p {
+    font-size: 18px;
+    height: 46px;
+    text-indent: -.8em;
+    margin-left: 1em;
+    line-height: 1.3;
+}
+
+.supportBox .productBox .faq_box ul li a:hover,
+.sup-ContentBox .rightBox a:hover {
+    text-decoration: underline;
+}
+.supportBox .productBox .faq_box ul li:nth-child(2){
+    margin-top: 4vw;
+}
+.supportBox .productBox .faq_box ul li:nth-child(1) .msg {
+    height: 110px;
+    margin-top: 5px;
+    text-indent:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.supportBox .productBox .faq_box ul li:nth-child(1) {
+    padding: 50px 1vw 20px 1vw;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    box-shadow:  1px 1px 3px 1px rgb(233, 233, 233);
+    margin: 1%;
+    font-size: 24px;
+}
+
+.supportBox .productBox .faq_box .more {
+    padding: 3vw 0;
+    font-size: 20px;
+}
+
+.supportBox .productBox .faq_box .more a {
+    color: #007bff;
+}
+
+.open_faq {
+    display: block !important;
+}
+
+.supportBox .productBox .faq_box ul li .number {
+    font-size: 24px;
+    font-weight: bold;
+   margin-top: 2vw;
+}
+
+
+/* supportContent */
+.sup-ContentBox {
+    width: 1150px;
+    margin: 0 auto;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    padding: 3vw 0;
+}
+
+.sup-ContentBox .leftBox {
+    width: 15%;
+    font-size: 20px;
+}
+
+.sup-ContentBox .rightBox {
+    border-left: 1px solid #ddd;
+    width: 85%;
+    font-size: 20px;
+    padding: 2vw;
+}
+
+.sup-ContentBox .leftBox .name {
+    font-size: 20px;
+    line-height: 1.3;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+}
+
+.sup-ContentBox .leftBox .name span {
+    position: absolute;
+    right: 15%;
+}
+
+.sup-ContentBox .leftBox p {
+    font-size: 18px;
+    margin: 1vw 0;
+    line-height: 1.3;
+}
+
+.sup-ContentBox .leftBox .pro_li.active p {
+    color: #c3172e;
+}
+
+.sup-ContentBox .leftBox .art_type {
+    margin-top: 3vw;
+}
+
+.sup-ContentBox .leftBox p:hover {
+    color: #c3172e;
+}
+
+.sup-ContentBox .rightBox .problem_list li {
+    margin-bottom: 3vw;
+}
+
+.sup-ContentBox .rightBox .problem_list li h3 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.sup-ContentBox .rightBox .problem_list li .msg {
+    margin-top: 1.5vw;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* contentPage */
+.contentPage {
+    margin: 0 auto;
+    width: 60%;
+    max-width: 800px;
+}
+
+.contentPage .tit {
+    font-size: 26px;
+    color: #242728;
+    font-weight: bold;
+    letter-spacing: 0;
+    border-bottom: 1px solid #ddd;
+    line-height: 30px;
+    padding-bottom: 30px;
+    padding-top: 3vw;
+}
+
+.contentPage .msg {
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.newsPagination {
+    display: block;
+    padding: 5vw 0 3vw 0;
+    text-align: center;
+}
+
+.newsPagination .page-item.disabled .page-link,
+.newsPagination .page-item:last-child .page-link {
+    background-color: transparent;
+    color: #000;
+}
+
+.newsPagination .page-link {
+    background-color: transparent;
+    border: none;
+    color: #000;
+}
+
+.newsPagination ul {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.newsPagination li:nth-child(1) {
+    margin-right: 3vw;
+}
+
+.newsPagination li:last-child {
+    margin-left: 3vw;
+}
+
+.newsPagination svg {
+    vertical-align: auto;
+}
+
+.newsPagination li {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 1px;
+    width: 40px;
+    vertical-align: middle;
+    height: 40px;
+    font-family: Avenir;
+    position: relative;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.newsPagination li.active:not(.newsPagination li:last-child) {
+    background: transparent;
+    border: 1px solid #000;
+}
+
+.newsPagination .page-item.active .page-link {
+    z-index: 3;
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0;
+    font-weight: bold;
+    padding: 0;
+    line-height: normal;
+}
+
+.newsPagination .page-link:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.newsPagination .index a:hover {
+    text-decoration: none;
+}
+
+.newsPagination .icon-arr {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    vertical-align: middle;
+    font-size: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* end */
+
+@media screen and (max-width: 800px) {}
+
+@media screen and (max-width:1500px)and (min-width:1000px) {}
+
+@media screen and (max-width:1200px)and (min-width:1000px) {
+    .sup-ContentBox .leftBox {
+        width: 20%;
+    }
+
+    .sup-ContentBox {
+        width: 950px;
+    }
+
+    .supportBox .productBox .pro-sort-ul li {
+        width: 185px;
+        height: 185px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #AMain{
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width:1000px)and (min-width:800px) {
+    .sup-ContentBox {
+        width: 768px;
+    }
+
+    .sup-ContentBox .leftBox {
+        width: 25%;
+    }
+
+    .supportBox .productBox {
+        width: 98%;
+        min-width: auto;
+    }
+
+    .supportBox .productBox .pro-sort-ul li {
+        width: 35%;
+        height: auto;
+    }
+
+    .supportBox .productBox .pro-sort-ul li img {
+        width: 80%;
+    }
+}
