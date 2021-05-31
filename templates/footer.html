@@ -12,8 +12,8 @@
 
 <body class="en">
     <div class="footer_main" th:fragment="myFooter">
-      <div class="footerBox">
-        <link rel='stylesheet' type='text/css' href='../static/css/head&foot.css'>
+ 		<div class="footerBox">
+        <!-- <link rel='stylesheet' type='text/css' href='/css/head&foot.css'> -->
         <div class="foot-list">
             <ul class="ul_1">
                 <li class="li_1">
@@ -23,6 +23,10 @@
                         <li><a href="./news.html" target="_self">News</a></li>
                         <!-- <li><a href="#" target="_self">Blog</a></li> -->
                     </ul>
+                    <div class="app-plus-icon">
+                        <span></span>
+                        <span></span>
+                </div>
                 </li>
                 <li class="li_1">
                     <p class="title">PRODUCTS</p>
@@ -32,6 +36,10 @@
                         <li><a href="./products.html?id=Laptops" target="_self">Laptops</a></li>
                         <li><a href="./products.html?id=Accessories" target="_self">Accessories</a></li>
                     </ul>
+                    <div class="app-plus-icon">
+                        <span></span>
+                        <span></span>
+                </div>
                 </li>
                 <li class="li_1">
                     <p class="title">SUPPORT</p>
@@ -39,6 +47,10 @@
                         <li><a href="./support.html" target="_self">Support Center</a></li>
                         <li><a href="./contact.html" target="_self">Contact US</a></li>
                     </ul>
+                    <div class="app-plus-icon">
+                        <span></span>
+                        <span></span>
+                </div>
                 </li>
             </ul>
         </div>
@@ -53,47 +65,59 @@
             </div>
             <ul>
                 <li>
-                    <img class="big-img" src="../static/img/facebook.png" alt="facebook">
+                    <a href="https://www.facebook.com/OSCAL-105402485064988" target="_blank">
+                        <img class="big-img lazyload" data-src="/img/facebook.png" alt="facebook">
+                    </a>
                 </li>
                 <li>
-                    <img class="big-img" src="../static/img/youtube.png" alt="youtube">
+                    <a href="https://www.youtube.com/channel/UCMK5WRf18_HnP_Zap5E6Frw" target="_blank">
+                        <img class="big-img lazyload" data-src="/img/youtube.png" alt="youtube">
+                    </a>
                 </li>
                 <li>
-                    <img class="big-img" src="../static/img/Instagram.png" alt="Instagram">
+                    <a href="https://www.instagram.com/oscal_offcial/" target="_blank">
+                        <img class="big-img lazyload" data-src="/img/Instagram.png" alt="Instagram">
+                    </a>
                 </li>
                 <li>
-                    <img class="big-img" src="../static/img/Twitter.png" alt="Twitter">
+                    <a href="https://twitter.com/OfficialOscal" target="_blank">
+                        <img class="big-img lazyload" data-src="/img/Twitter.png" alt="Twitter">
+                    </a>
                 </li>
                 <li>
-                    <img class="big-img" src="../static/img/ins.png" alt="ins">
+                    <a href="https://www.instagram.com/oscal_offcial/" target="_blank">
+                        <img class="big-img lazyload" data-src="/img/ins.png" alt="ins">
+                    </a>
                 </li>
             </ul>
         </div>
         <div class="foot-container">
             <ul>
                 <li>
-                    <a href="#" target="_parent">
+                    <a href="./privacy.html" target="_parent">
                         Privacy Policy
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_parent">
+                    <a href="./terms.html" target="_parent">
                         Terms of Use
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_parent">
+                    <a href="./legal.html" target="_parent">
                         Legal Statement
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_parent">
+                    <a href="./intellectual.html" target="_parent">
                         Intellectual Property Rights
                     </a>
                 </li>
             </ul>
             <p>copyright ©2021 Oscal All rights reserved.</p>
         </div>
+        <script src="../static/lib/js/jquery-3.3.1.min.js"></script>
+        <script src="../static/js/footer.js"></script>
       </div>
     </div>
 </body>

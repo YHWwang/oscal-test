@@ -9,6 +9,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="Description" content="Wireless Headphones Without Compromise For Better Workouts">
     <title>OSCAL</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <link rel='stylesheet' type='text/css' href='../static/css/brand.css'>
     <link rel='stylesheet' type='text/css' href='../static/css/public.css'>
     <link rel="stylesheet" type="text/css" href="../static/lib/css/swiper.min.css">
@@ -38,10 +40,26 @@
                     ONLY THE BRAVE
                 </p>
                 <p class="watch_vid">
-                    <a class="watch" href="#">Watch the video ></a>
+                    <a class="watch" href="javascript:viod(0)" data-toggle="modal" data-target="#exampleModal">Watch the video ></a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Video</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <video controls autoplay style="width: 100%;" src="/img/video.mp4">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </p>
             </div>
-            <img class="big-img lazyload" data-src="../static/img/brand_banner.jpg" alt="oscal">
+            <img class="big-img pho_image lazyload" data-src="../static/img/brand_banner.jpg"
+                data-phone="../static/img/brand_banner_pho.jpg" alt="oscal">
         </div>
         <div class="mainContent">
             <div class="introduction">
@@ -101,7 +119,8 @@
                         </li>
                     </ul>
                 </div>
-                <img class="big-img lazyload" data-src="../static/img/brand_video.jpg" alt="oscal">
+                <img class="big-img pho_image lazyload" data-src="../static/img/brand_video.jpg"
+                    data-phone="../static/img/brand_video_pho.jpg" alt="oscal">
                 <div class="news_line">
                     <p class="title">
                         News Center

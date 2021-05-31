@@ -169,7 +169,7 @@ img {
 .mainContent .two_Column .product_img img {
     transform: translateY(30px);
     transition: all 2s ease;
-    width: 70%;
+    width: 30%;
 }
 
 .mainShow {
@@ -227,7 +227,9 @@ img {
     font-weight: bold;
     margin-bottom: 2%;
 }
-
+.pho_video{
+    display: none;
+}
 .watch_video .box1 .watch_vid {
     display: inline-block;
 }
@@ -270,22 +272,13 @@ img {
 .mainContent .four-content .product_img {
     position: relative;
     padding-top: 2vw;
-    width: 40%;
+    width: 25%;
     margin: 0 auto;
     text-align: center;
 }
-.mainContent .content .product_img.bigImg{
-    width: 60%;
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.mainContent .content .product_img.bigImg2{
-    width: 35%;
-}
-.mainContent .content .pho_product_img {
-    width: 25%;
+
+.mainContent .content .product_big_img {
+    width: 70%;
 }
 
 .mainContent .four-content .product_img {
@@ -302,10 +295,13 @@ img {
     font-size: 56px;
     margin-left: 10px;
     position: relative;
+    margin-bottom: 0;
     line-height: 1;
     font-family: googleSans;
 }
 .mainContent .content .product_word .tit p sup{
+    top: auto;
+    vertical-align: revert;
     font-size: 14px;
     border-radius: 10px;
     padding: 3px 8px;
@@ -365,6 +361,7 @@ img {
 .mainContent .two_Column ul li .four-content .product_word .tit p {
     font-size: 40px;
     margin-left: 10px;
+    margin-bottom: 0;
     position: relative;
     line-height: 1;
     font-family: Avenir;
@@ -445,17 +442,24 @@ img {
     }
 }
 @media screen and (max-width: 1000px) {
-    #AMain{
+    /* #AMain{
         width: 1000px;
-    }
+    } */
 }
 @media screen and (max-width: 800px) {
     .mainContent .content .product_word .tit img {
         width: 30%;
     }
-
+    .mainContent .two_Column{
+        display: none;
+    }
+    .mainContent .content .product_word .tit p sup{
+        top: auto;
+        vertical-align: revert;
+    }
     .mainContent .content .product_word .tit p {
         font-size: 8vw;
+        margin-bottom: 0;
     }
 
     .mainContent .content .product_word .msg {
@@ -512,7 +516,12 @@ img {
         font-size: 7vw;
         margin-bottom: 4%;
     }
-
+    .pho_video{
+        display: block;
+    }
+    .pc_video{
+        display: none;
+    }
     .watch_video .watch,
     .mainContent .banner .swiper-container .word .more span {
         font-size: 3vw;

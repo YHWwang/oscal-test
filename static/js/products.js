@@ -1,11 +1,6 @@
 $(function () {
   var ImgWidth = document.body.clientWidth
   var product_img_height = $('.product-img')
-  if (ImgWidth < 800) {
-    // product_img_height.css('height',ImgWidth / .6)
-  } else {
-    product_img_height.css('height', ImgWidth / 5.5)
-  }
 
   $(window).resize(function () {
     ImgWidth = document.body.clientWidth

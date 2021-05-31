@@ -45,27 +45,32 @@
                    ONLY THE BRAVE
                 </p>
                 <p class="watch_vid delay-2">
-                    <a class="watch" href="javascript:viod(0)" data-toggle="modal" data-target="#exampleModal">Watch the video ></a>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
+                    <a class="watch" href="javascript:viod(0)" data-toggle="modal" data-target="#exampleModal">Watch the
+                        video ></a>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Video</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                                <h5 class="modal-title" id="exampleModalLabel">Video</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
-                             <video controls autoplay style="width: 100%;" src="../static/img/video.mp4">
+                                <video controls autoplay style="width: 100%;" src="../static/img/video.mp4">
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
+                </div>
                 </p>
             </div>
-            <video muted autoplay loop style="width: 100%;">
+            <video class="pc_video" muted autoplay loop style="width: 100%;">
                 <source src="../static/img/video_img.mp4" type="video/mp4">
-             </video> 
+            </video>
+            <video class="pho_video" muted autoplay loop style="width: 100%;">
+                <source src="../static/img/pho/pho_video.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="mainContent">
             <div class="product_box">
@@ -85,8 +90,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="product_img bigImg">
-                        <img class="lazyload" data-src="../static/img/product_tab9.png" alt="oscal">
+                    <div class="product_img">
+                        <img class="lazyload" data-src="../static/img/C20.png" alt="oscal">
                     </div>
                 </div>
                 <div class="content content-item-2">
@@ -105,8 +110,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="product_img pho_product_img">
-                        <img class=" lazyload" data-src="../static/img/product_c20.png" alt="oscal">
+                    <div class="product_img">
+                        <img class=" lazyload" data-src="../static/img/C80.png" alt="oscal">
                     </div>
                 </div>
                 <div class="content content-item-3">
@@ -125,8 +130,28 @@
                             </p>
                         </div>
                     </div>
-                    <div class="product_img bigImg2">
-                        <img class="lazyload" data-src="../static/img/product_acebook1.png" alt="oscal">
+                    <div class="product_img">
+                        <img class="lazyload" data-src="../static/img/S60.png" alt="oscal">
+                    </div>
+                </div>
+                <div class="content content-item-4">
+                    <div class="product_word">
+                        <div class="box">
+                            <div class="tit delay-1">
+                                <img class="lazyload" data-src="../static/img/big_logo.png" alt="oscal">
+                                <p>Pab 8<sup>HOT</sup></p>
+                            </div>
+                            <p class="msg delay-2">
+                                Affordable laptop with premium design
+                            </p>
+                            <p class="buy_href delay-3">
+                                <span class="more"><a href="#" target="_blank">Learn More ></a></span>
+                                <span class="buy"><a href="#" target="_blank">Buy Now ></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product_img product_big_img">
+                        <img class="lazyload" data-src="../static/img/pad8.png" alt="oscal">
                     </div>
                 </div>
                 <div class="two_Column">
@@ -148,7 +173,7 @@
                                     </div>
                                 </div>
                                 <div class="product_img">
-                                    <img class="first_row lazyload" data-src="../static/img/tab9.png" alt="oscal">
+                                    <img class="first_row lazyload" data-src="../static/img/pad8_img.png" alt="oscal">
                                 </div>
                             </div>
                         </li>
@@ -173,48 +198,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="four-content">
-                                <div class="product_word">
-                                    <div class="box">
-                                        <div class="tit">
-                                            <img class="lazyload" data-src="../static/img/small_logo.png" alt="oscal">
-                                            <p>Acebook 1</p>
-                                        </div>
-                                        <p class="msg">
-                                            Affordable laptop with premium design
-                                        </p>
-                                        <p class="buy_href">
-                                            <span class="more"><a href="#" target="_blank">Learn More ></a></span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="product_img">
-                                    <img class="second_row lazyload" data-src="../static/img/acebook1.png" alt="oscal">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="four-content">
-                                <div class="product_word">
-                                    <div class="box">
-                                        <div class="tit">
-                                            <img class="lazyload" data-src="../static/img/small_logo.png" alt="oscal">
-                                            <p>AirBuds 3</p>
-                                        </div>
-                                        <p class="msg">
-                                            Smart Day with Affordable AirBuds 3
-                                        </p>
-                                        <p class="buy_href">
-                                            <span class="more"><a href="#" target="_blank">Learn More ></a></span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="product_img">
-                                    <img class="second_row lazyload" data-src="../static/img/aribuds3.png" alt="oscal">
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -230,7 +213,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <img class="big-img pho_image lazyload" data-src="../static/img/banner_1.jpg" alt="OSCAL">
+                            <img class="big-img pho_image lazyload" data-src="../static/img/banner_1.jpg" data-phone='../static/img/banner_1_pho.jpg' alt="OSCAL">
                         </div>
                         <div class="swiper-slide">
                             <div class="word">

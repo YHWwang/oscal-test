@@ -1,38 +1,4 @@
 $(function () {
-  let ds = $('.newsPagination .page-item')
-  let len = ds.length - 2
-  $('.page-item-current').click(function () {
-    if ($(this).hasClass('next')) { // next下一页
-      if ($('.newsPagination .page-item.active').text() == len) {
-        $(this).addClass('disabled')
-        return false
-      } else {
-        $(this).removeClass('disabled')
-      }
-      ds.eq(parseInt($('.newsPagination .page-item.active').text()) + 1).addClass('active').siblings().removeClass('active')
-    } else { // prev上一页
-      if ($('.newsPagination .page-item.active').text() == 1) {
-        $('.newsPagination li:nth-child(0)').addClass('disabled')
-        return false
-      } else {
-        $('.newsPagination li:nth-child(0)').removeClass('disabled')
-      }
-      ds.eq(parseInt($('.newsPagination .page-item.active').text()) - 1).addClass('active').siblings().removeClass('active')
-    }
-  })
-  $('.newsPagination li.index').click(function () { //点击跳转页码
-    $(this).addClass('active').siblings().removeClass('active')
-    if ($('.newsPagination .page-item.active').text() == len) {
-      $('.newsPagination li:nth-child(' + len + 2 + ')').addClass('disabled')
-    } else {
-      $('.newsPagination li:nth-child(' + len + 2 + ')').removeClass('disabled')
-    }
-    if ($('.newsPagination .page-item.active').text() == 1) {
-      $('.newsPagination li:nth-child(1)').addClass('disabled')
-    } else {
-      $('.newsPagination li:nth-child(1)').removeClass('disabled')
-    }
-  })
   setTimeout(() => {
     $('.sup-ContentBox .leftBox .pro_type .pro_ul li').eq(0).click()
   }, 10);
@@ -100,7 +66,7 @@ $(function () {
       </p>
   </a>
   </li>
-  `,`
+  `, `
   <li>
   <img class="lazyload" data-src="../static/img/support_icon_1.png" alt="oscal">
   <p class="number">
@@ -113,18 +79,18 @@ $(function () {
   <li>
   <a href="./faqs/faq.html?id=lap_1" target="_blank">
       <p>
-      The tablet's battery drains quickly and has a short standby time
+      1.The tablet's battery drains quickly and has a short standby time
       </p>
   </a>
   </li>
   <li>
   <a href="./faqs/faq.html?id=lap_2" target="_blank">
       <p>
-      My tablet gets overheated
+      2.My tablet gets overheated
       </p>
   </a>
   </li>
-  `,`
+  `, `
   <li>
   <img class="lazyload" data-src="../static/img/support_icon_1.png" alt="oscal">
   <p class="number">
@@ -137,14 +103,14 @@ $(function () {
   <li>
   <a href="./faqs/faq.html?id=acc_1" target="_blank">
       <p>
-      What is the weight of the AirBuds 3?
+      1.What is the weight of the AirBuds 3?
       </p>
   </a>
   </li>
   <li>
   <a href="./faqs/faq.html?id=acc_2" target="_blank">
       <p>
-      How to charge AirBuds 3?
+      2.How to charge AirBuds 3?
       </p>
   </a>
   </li>
@@ -183,9 +149,9 @@ $(function () {
       </p>
   </a>
 </li>
-  `, 
-  '', 
-  `
+  `,
+    '',
+    `
   <li>
   <img class="lazyload" data-src="../static/img/support_icon_2.png" alt="oscal">
   <p class="number">
@@ -210,7 +176,7 @@ $(function () {
       </p>
   </a>
 </li>
-  `,`
+  `, `
   <li>
   <img class="lazyload" data-src="../static/img/support_icon_2.png" alt="oscal">
   <p class="number">
@@ -297,7 +263,7 @@ $(function () {
       </p>
   </a>
 </li>
-  `,`
+  `, `
   <li>
   <img class="lazyload" data-src="../static/img/support_icon_3.png" alt="oscal">
   <p class="number">
@@ -322,7 +288,7 @@ $(function () {
       </p>
   </a>
 </li>
-  `,`
+  `, `
   <li>
   <img class="lazyload" data-src="../static/img/support_icon_3.png" alt="oscal">
   <p class="number">
@@ -342,22 +308,41 @@ $(function () {
 </li>
 
   `]
-  let index = 0
+  var index = 0
+  var thisSelect = null
   selectProSort = function (selProName) {
-    //0-phone,1-Tablets,2-Laptops,3-Accessories
-    switch (selProName) {
-      case 'Phones': index = 0; break;
-      case 'Laptops': index = 1; break;
-      case 'Tablets': index = 2; break;
-      case 'Accessories': index = 3; break;
+    if (thisSelect != selProName) {
+      $('.supportBox .productBox .faq_box').show()
+      thisSelect = selProName
+      switch (selProName) {
+        case 'Phones': index = 0; break;
+        case 'Laptops': index = 1; break;
+        case 'Tablets': index = 2; break;
+        case 'Accessories': index = 3; break;
+      }
+      index == 1 ? $('.preSale-list').hide() : $('.preSale-list').show()
+      if( document.body.offsetWidth <800){
+        $('.go-top').hide()
+        $('body').css('overflow', 'hidden')
+      }
+      $('.faq-list').html(faq_list[index])
+      $('.preSale-list').html(preSale_list[index])
+      $('.afterSale-list').html(afterSale_list[index])
+    } else {
+      $('.supportBox .productBox .faq_box').hide()
+      thisSelect = null
     }
-    index == 1 ? $('.preSale-list').hide() : $('.preSale-list').show()
+    //0-phone,1-Tablets,2-Laptops,3-Accessories
 
-    $('.faq-list').html(faq_list[index])
-    $('.preSale-list').html(preSale_list[index])
-    $('.afterSale-list').html(afterSale_list[index])
   }
-
+  $('.supportBox .productBox .faq_box div .app-close svg').click(function () {
+    $(this).parent().parents('.faq_box').toggle()
+     $('body').css('overflow', 'auto')
+    $('.go-top').show()
+  })
+  $('.app-icon svg').click(function(){
+    $(this).parents('.leftBox').toggleClass('boxClose')
+  })
   var typeData = []
   var typeData_1 = [
     {
@@ -608,6 +593,9 @@ A factory reset will erase all data from the storage space of your device, inclu
   ProductType = function (name) {
     let html = ''
     let proname = ''
+    if( document.body.offsetWidth <800){
+     $('.sup-ContentBox .leftBox').addClass('boxClose')
+    }
     switch (name) {
       case 'Phones': { typeData = typeData_1; proname = 'pho' }; break;
       case 'Laptops': { typeData = typeData_2; proname = 'lap' }; break;
@@ -630,10 +618,6 @@ A factory reset will erase all data from the storage space of your device, inclu
     }
     $('.rightBox .problem_list .dataList').html(html)
   }
-
-  $('.supportBox .productBox ul li').click(function () {
-    $('.supportBox .productBox .faq_box').show()
-  })
 
   $('.sup-ContentBox .pro_li').click(function () {
     $('.sup-ContentBox .pro_li').removeClass('active')

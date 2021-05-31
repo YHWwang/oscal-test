@@ -16,6 +16,8 @@ $(function () {
             'messages': 'The R&D team was established. A new brand began to take shape.'
         }],
     }
+    // var ImgWidth = document.body.clientWidth //获取默认宽度
+
     function AddYearList() {
         $.each(brandList, function (list, detail) {
             var yearList = "<li><p>" + list + "</p></li>"
@@ -104,7 +106,6 @@ $(function () {
             }
         }, 0.1)
     }
-
 
     // slide out
     var myTweenOut = function () {
