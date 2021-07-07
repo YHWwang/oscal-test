@@ -2,332 +2,107 @@ $(function () {
   setTimeout(() => {
     $('.sup-ContentBox .leftBox .pro_type .pro_ul li').eq(0).click()
   }, 10);
-  var faq_list = [
-    `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_1.png" alt="oscal">
-  <p class="number">
-      Shopping FAQs
-  </p>
-      <p class="msg">
-          Payment,orders,shipping and warranty policies.
-      </p>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=pho_1" target="_blank">
-      <p>
-          1.Do I still need to pay custom fee?
-      </p>
-  </a>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=pho_2" target="_blank">
-      <p>
-          2.What is the version of items ?
-      </p>
-  </a>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=pho_3" target="_blank">
-      <p>
-          3.How can I get other discounts?
-      </p>
-  </a>
-  </li>
-  `
-    , `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_1.png" alt="oscal">
-  <p class="number">
-      Shopping FAQs
-  </p>
-      <p class="msg">
-          Payment,orders,shipping and warranty policies.
-      </p>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=tab_1" target="_blank">
-      <p>
-          1.Touchpad gestures
-      </p>
-  </a>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=tab_2" target="_blank">
-      <p>
-          2.Viewing the location of programs and apps downloaded from the Microsoft Store
-      </p>
-  </a>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=tab_3" target="_blank">
-      <p>
-          3.Viewing the Windows system activation time
-      </p>
-  </a>
-  </li>
-  `, `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_1.png" alt="oscal">
-  <p class="number">
-      Shopping FAQs
-  </p>
-      <p class="msg">
-          Payment,orders,shipping and warranty policies.
-      </p>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=lap_1" target="_blank">
-      <p>
-      1.The tablet's battery drains quickly and has a short standby time
-      </p>
-  </a>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=lap_2" target="_blank">
-      <p>
-      2.My tablet gets overheated
-      </p>
-  </a>
-  </li>
-  `, `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_1.png" alt="oscal">
-  <p class="number">
-      Shopping FAQs
-  </p>
-      <p class="msg">
-          Payment,orders,shipping and warranty policies.
-      </p>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=acc_1" target="_blank">
-      <p>
-      1.What is the weight of the AirBuds 3?
-      </p>
-  </a>
-  </li>
-  <li>
-  <a href="./faqs/faq.html?id=acc_2" target="_blank">
-      <p>
-      2.How to charge AirBuds 3?
-      </p>
-  </a>
-  </li>
-  `
-  ]
-  var preSale_list = [
-    `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_2.png" alt="oscal">
-  <p class="number">
-      Troubleshooting
-  </p>
-      <p class="msg">
-          Your go-to stop for suggestionsto help solve your problem
-      </p>
-  
-</li>
-<li>
-  <a href="./faqs/faq.html?id=pho_4" target="_blank">
-      <p>
-         1.What to do if my phone gets heat?
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=pho_5" target="_blank">
-      <p>
-          2.How to solve the application error?
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=pho_6" target="_blank">
-      <p>
-          3.What's the difference between Doke OS and the original Android OS?
-      </p>
-  </a>
-</li>
-  `,
-    '',
-    `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_2.png" alt="oscal">
-  <p class="number">
-      Troubleshooting
-  </p>
-      <p class="msg">
-          Your go-to stop for suggestionsto help solve your problem
-      </p>
-  
-</li>
-<li>
-  <a href="./faqs/faq.html?id=lap_3" target="_blank">
-      <p>
-      1.My tablet is slow to respond when I surf the Internet
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=lap_4" target="_blank">
-      <p>
-      2.Find the serial number (SN) on tablets
-      </p>
-  </a>
-</li>
-  `, `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_2.png" alt="oscal">
-  <p class="number">
-      Troubleshooting
-  </p>
-      <p class="msg">
-          Your go-to stop for suggestionsto help solve your problem
-      </p>
-  
-</li>
-<li>
-  <a href="./faqs/faq.html?id=acc_3" target="_blank">
-      <p>
-      1.Do both the AirBuds 3 headphones and charging case have batteries?
-      </p>
-  </a>
-</li>
-  `]
-  var afterSale_list = [
-    `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_3.png" alt="oscal">
-  <p class="number">
-      OS FAQs
-  </p>
-      <p class="msg">
-          Get the latest os updates
-          for your device
-      </p>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=pho_7" target="_blank">
-      <p>
-          1.Will it get stuck when running the OS?
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=pho_8" target="_blank">
-      <p>
-          2.What's the key features of the OS?
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=pho_9" target="_blank">
-      <p>
-          3.What to do if my voice cannot be heard when calling? 
-      </p>
-  </a>
-</li>
-  `, `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_3.png" alt="oscal">
-  <p class="number">
-      OS FAQs
-  </p>
-  
-      <p class="msg">
-          Get the latest os updates
-          for your device
-
-      </p>
- 
-</li>
-<li>
-  <a href="./faqs/faq.html?id=tab_4" target="_blank">
-      <p>
-          1.Displaying or hiding the language bar on the home screen
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=tab_5" target="_blank">
-      <p>
-          2.Cleaning up a disk on the laptop
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=tab_6" target="_blank">
-      <p>
-          3.Care tips for you laptop
-      </p>
-  </a>
-</li>
-  `, `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_3.png" alt="oscal">
-  <p class="number">
-      OS FAQs
-  </p>
-      <p class="msg">
-          Get the latest os updates
-          for your device
-      </p>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=lap_5" target="_blank">
-      <p>
-      1.How to enable TalkBack/Screen Reader
-      </p>
-  </a>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=lap_6" target="_blank">
-      <p>
-      2.How to reset a tablet to its factory settings
-      </p>
-  </a>
-</li>
-  `, `
-  <li>
-  <img class="lazyload" data-src="../static/img/support_icon_3.png" alt="oscal">
-  <p class="number">
-      OS FAQs
-  </p>
-      <p class="msg">
-          Get the latest os updates
-          for your device
-      </p>
-</li>
-<li>
-  <a href="./faqs/faq.html?id=acc_4" target="_blank">
-      <p>
-      1.Working range of Bluetooth
-      </p>
-  </a>
-</li>
-
-  `]
+  var faq_list = []
+  var preSale_list = []
+  var afterSale_list = []
   var index = 0
   var thisSelect = null
   selectProSort = function (selProName) {
     if (thisSelect != selProName) {
+      let data = {}
+      $.ajax({
+        type: "post",
+        url: "http://192.168.12.201:9002/getProductList",
+        dataType: 'json',
+        data: '{"categoryId": ' + 1 + '}',
+        async: false,
+        contentType: "application/json;charset=UTF-8",
+        success: function (req) {
+          data = req
+        }
+      })
+      data.oscalFaqList.forEach((element, index) => {
+        switch (index) {
+          case 0: {
+            faq_list = `<li>
+                <img class="lazyload" data-src="${element.faqIco}" alt="oscal">
+                <p class="number">
+                    ${element.faqName}
+                </p>
+                    <p class="msg">
+                    ${element.faqTitle}
+                    </p>
+                </li>`
+            element.oscalFaqDetailList.forEach((ele, index) => {
+              faq_list += `<li>
+                <a href="./faqs/faq.html&${ele.id}" target="_blank">
+                    <p>
+                  ${index + 1}.${ele.faqDetailTitle}
+                    </p>
+                </a>
+                </li>`
+            })
+          } break;
+          case 1: {
+            preSale_list = `<li>
+            <img class="lazyload" data-src="${element.faqIco}" alt="oscal">
+            <p class="number">
+                ${element.faqName}
+            </p>
+                <p class="msg">
+                ${element.faqTitle}
+                </p>
+            </li>`
+            element.oscalFaqDetailList.forEach((ele, index) => {
+              preSale_list += `<li>
+            <a href="./faqs/faq.html&${ele.id}" target="_blank">
+                <p>
+              ${index + 1}.${ele.faqDetailTitle}
+                </p>
+            </a>
+            </li>`
+            })
+          } break;
+          case 2: {
+            afterSale_list = `<li>
+            <img class="lazyload" data-src="${element.faqIco}" alt="oscal">
+            <p class="number">
+                ${element.faqName}
+            </p>
+                <p class="msg">
+                ${element.faqTitle}
+                </p>
+            </li>`
+            element.oscalFaqDetailList.forEach((ele, index) => {
+              afterSale_list += `<li>
+            <a href="./faqs/faq.html&${ele.id}" target="_blank">
+                <p>
+              ${index + 1}.${ele.faqDetailTitle}
+                </p>
+            </a>
+            </li>`
+            })
+          } break;
+          default:
+            break;
+        }
+      });
       $('.supportBox .productBox .faq_box').show()
       thisSelect = selProName
       switch (selProName) {
         case 'Phones': index = 0; break;
-        case 'Laptops': index = 1; break;
+        // case 'Laptops': index = 1; break;
         case 'Tablets': index = 2; break;
-        case 'Accessories': index = 3; break;
+        // case 'Accessories': index = 3; break;
       }
       index == 1 ? $('.preSale-list').hide() : $('.preSale-list').show()
-      if( document.body.offsetWidth <800){
+      if (document.body.offsetWidth < 800) {
         $('.go-top').hide()
         $('body').css('overflow', 'hidden')
       }
-      $('.faq-list').html(faq_list[index])
-      $('.preSale-list').html(preSale_list[index])
-      $('.afterSale-list').html(afterSale_list[index])
+      $('.faq-list').html(faq_list)
+      $('.preSale-list').html(preSale_list)
+      $('.afterSale-list').html(afterSale_list)
     } else {
       $('.supportBox .productBox .faq_box').hide()
       thisSelect = null
@@ -337,13 +112,13 @@ $(function () {
   }
   $('.supportBox .productBox .faq_box div .app-close svg').click(function () {
     $(this).parent().parents('.faq_box').toggle()
-     $('body').css('overflow', 'auto')
+    $('body').css('overflow', 'auto')
     $('.go-top').show()
   })
-  $('.app-icon svg').click(function(){
+  $('.app-icon svg').click(function () {
     $(this).parents('.leftBox').toggleClass('boxClose')
   })
-  var typeData = []
+  var typeData = {}
   var typeData_1 = [
     {
       tit: 'Do I still need to pay custom fee?',
@@ -590,32 +365,101 @@ A factory reset will erase all data from the storage space of your device, inclu
     }
 
   ]
+
+  getSupportData()
+  function getSupportData(type) {
+    let data = {
+      "msg": "操作成功",
+      "code": "0",
+      "oscalFaqDetailList": {
+        "total": 4,
+        "list": [
+          {
+            "faq_detail_content": "1",
+            "faq_detail_title": "1",
+            "id": 1
+          },
+          {
+            "faq_detail_content": "1",
+            "faq_detail_title": "1",
+            "id": 2
+          },
+          {
+            "faq_detail_content": "1",
+            "faq_detail_title": "1",
+            "id": 3
+          },
+          {
+            "faq_detail_content": "1",
+            "faq_detail_title": "1",
+            "id": 4
+          }
+        ],
+        "pageNum": 1,
+        "pageSize": 4,
+        "size": 4,
+        "startRow": 0,
+        "endRow": 3,
+        "pages": 1,
+        "prePage": 0,
+        "nextPage": 0,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [
+          1
+        ],
+        "navigateFirstPage": 1,
+        "navigateLastPage": 1
+      }
+    }
+    // $.ajax({
+    //       type: "post",
+    //       url: "http://192.168.12.201:9002/getProductList",
+    //       dataType: 'json',
+    //       data: {
+    //         "type": type,
+    //         "faqId":type,
+    //         "pageNum":"1",
+    //         "categoryId":"1"
+    //       },
+    //       async:false,
+    //       contentType: "application/json;charset=UTF-8",
+    //       success:function(req){
+    //         data = req
+    //       }
+    //     })
+    return data
+  }
   ProductType = function (name) {
     let html = ''
     let proname = ''
-    if( document.body.offsetWidth <800){
-     $('.sup-ContentBox .leftBox').addClass('boxClose')
+    if (document.body.offsetWidth < 800) {
+      $('.sup-ContentBox .leftBox').addClass('boxClose')
     }
-    switch (name) {
-      case 'Phones': { typeData = typeData_1; proname = 'pho' }; break;
-      case 'Laptops': { typeData = typeData_2; proname = 'lap' }; break;
-      case 'Tablets': { typeData = typeData_3; proname = 'tab' }; break;
-      case 'Accessories': { typeData = typeData_4; proname = 'acc' }; break;
-    }
-    for (let i = 0; i < typeData.length; i++) {
+    typeData = getSupportData()
+    // switch (name) {
+    //   case 'Phones': { typeData = typeData_1; proname = 'pho' }; break;
+    //   // case 'Laptops': { typeData = typeData_2; proname = 'lap' }; break;
+    //   case 'Tablets': { typeData = typeData_3; proname = 'tab' }; break;
+    //   // case 'Accessories': { typeData = typeData_4; proname = 'acc' }; break;
+    // }
+    typeData.oscalFaqDetailList.list.forEach((element, index) => {
       html += `
       <li>
-                                <h3>
-                                    <a href="./faqs/faq.html?id=${proname + '_' + (i + 1)}" target="_blank">
-                                        ${typeData[i].tit}
-                                    </a>
-                                </h3>
-                                <p class="msg">
-                                ${typeData[i].msg}
-                                </p>
-                            </li>
+          <h3>
+              <a href="./faqs/faq.html?id=${element.id}" target="_blank">
+              ${element.faq_detail_title}
+              </a>
+          </h3>
+          <p class="msg">
+          ${element.faq_detail_content}
+          </p>
+      </li>
       `
-    }
+    })
     $('.rightBox .problem_list .dataList').html(html)
   }
 

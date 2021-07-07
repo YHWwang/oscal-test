@@ -139,12 +139,10 @@ h6 {
 .big-img {
     width: 100%;
 }
-.products-lists ul li.item-list{
-    display: none;
-}
-.products-lists ul li.item-list.active{
+
+/* .products-lists ul li.item-list.active{
     display: block !important;
-}
+} */
 img {
     -webkit-user-drag: none;
 }

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community-users</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel='stylesheet' type='text/css' href='/OSCAL/oscal-test/static/css/coinPage.css'>
+    <link rel='stylesheet' type='text/css'
+        href="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+
+<body class="en">
+    <div id="header" th:include="header :: myHeader">
+    </div>
+    <div id="AMain" class="main">
+        <div class="receiveCoinBox">
+           
+            <div class="receiveCoinMsg">
+                <div class="navsMenu">
+                    <p><a href="../community.html">Home</a> > xxx</p>
+                </div>
+                <div class="coinBox">
+                    <ul>
+                        <li>
+                            Sign in this month(2)
+                        </li>
+                        <li>
+                            Cumulative attendance(2)
+                        </li>
+                        <li>
+                            Continuous attendance(3)
+                        </li>
+                    </ul>
+                </div>
+                <div class="coinIntroduction coinRules">
+                    <p class="title">Rules for earning o currency</p>
+                    <p>1 在社区登录签到 每次可以获得5个O币</p>
+                    <p>2 每次发表一个帖子且点赞和评论人数超过10人奖励10个O币，点赞和评论的人数大于20人奖励20个O币</p>
+                    <p>3 每次发表帖子，其他用户可以根据喜好打赏，每次每个用户在同一个博主的同一个帖子上打赏不能超过 10个O币</p>
+                </div>
+                <div class="coinIntroduction coinUse">
+                    <p class="title">The use of O coins</p>
+                    <p>1 获得O币后，你可以打赏给你喜欢的博主所发的帖子 </p>
+                    <p>2 一定数量的O币可以在O币商城（积分商城）兑换、抽奖、竞拍你喜欢的产品 </p>
+                    <p>3 获得一定数量的O币后 可以参与我们产品体验的机会</p>
+                </div>
+            </div>
+            <div class="usersInfo">
+                <div class="usersBox">
+                    <div class="usersImage">
+                        <img class="user_image" src="/OSCAL/oscal-test/static/img/user-img.jpg" alt="usersImg">
+                    </div>
+                    <p class="usersName">
+                        <span class="usersName">test</span>
+                        
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="number">2</p>
+                            <p class="user_info">Posts</p>
+                        </li>
+                        <li>
+                            <p class="number">0</p>
+                            <p class="user_info">Following</p>
+                        </li>
+                        <li>
+                            <p class="number">1</p>
+                            <p class="user_info">Followers</p>
+                        </li>
+                        <li>
+                            <p class="number">90</p>
+                            <p class="user_info">O coin</p>
+                        </li>
+                    </ul>
+                </div>
+                <a href="./createPost.html" target="_blank">
+                    <div class="createPost">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        <span>
+                            New Post
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+       
+        <div id="footer" th:include="footer :: myFooter">
+        </div>
+
+</body>
+<script src="/OSCAL/oscal-test/static/lib/js/jquery-3.3.1.min.js"></script>
+<script async src="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script async
+    src="https://d2kbvjszk9d5ln.cloudfront.net/yshop/upload/other/lazysizes.min-20201204070627489.js"></script>
+
+</html>

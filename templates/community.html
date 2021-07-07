@@ -51,6 +51,7 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                     <div class="post-list">
                         <ul>
@@ -150,7 +151,6 @@
                                         <div>
                                             <p class="name">
                                                 Moktk
-                                                <span>Moderator</span>
                                             </p>
                                             <p class="time">
                                                 Latest reply time
@@ -213,7 +213,6 @@
                                         <div>
                                             <p class="name">
                                                 Jtke
-                                                <span>Moderator</span>
                                             </p>
                                             <p class="time">
                                                 Latest reply time
@@ -246,10 +245,24 @@
                                 </div>
                             </li>
                         </ul>
+                        
                     </div>
                     <div class="ViewMore">
-                        <span> View more</span>
+                        <span id="liveToastBtn"> View more</span>
                     </div>
+                    <div class="position-fixed p-3" style="z-index: 5; left: 50%; top: 20%;transform: translate(-50%);">
+                        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                          <div class="toast-header">
+                            <strong class="mr-auto">Title</strong>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="toast-body">
+                            No More Data
+                          </div>
+                        </div>
+                      </div>
                 </div>
                 <div class="content-right col-lg-4 col-md-4 col-sm-0 col-xs-0">
                     <div class="top_image">
@@ -269,7 +282,8 @@
                         </div>
                     </div>
                     <div class="createPost">
-                        <a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                        <a href="./community/createPost.html" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path
                                     d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -289,16 +303,15 @@
                         <div class="day">
                             <p class="date">13</p>
                             <p class="week">THU</p>
-                            <button class="check_login">
-                                Check in to earn points
+                            <button type="button" class="btn check_login">
+                                Sign in to earn O coin
                             </button>
                             <p class="check_num">
-                                <span class="number">20 &nbsp;</span>
-                                OSCAL fans checked today
+                                Click to view O coin collection rules
                             </p>
                         </div>
                     </div>
-                    <div class="hot_sections">
+                    <!-- <div class="hot_sections">
                         <div class="hot_top">
                             <div class="top_box">
                                 <span class="tit">
@@ -347,7 +360,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="hot_post">
                         <div class="top_tit">
                             <span class="tit">

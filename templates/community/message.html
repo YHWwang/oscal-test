@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community-users</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel='stylesheet' type='text/css' href='/OSCAL/oscal-test/static/css/message.css'>
+    <link rel='stylesheet' type='text/css'
+        href="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+
+<body class="en">
+    <div id="header" th:include="header :: myHeader">
+    </div>
+    <div id="AMain" class="main">
+        <div class="mainContent">
+            <div class="usersBox">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-messages-tab" data-toggle="tab" href="#nav-messages"
+                            role="tab" aria-controls="nav-messages" aria-selected="true">Messages <span
+                                class="badge badge-pill badge-danger">2</span></a>
+                        <a class="nav-link" id="nav-notifications-tab" data-toggle="tab" href="#nav-notifications"
+                            role="tab" aria-controls="nav-notifications" aria-selected="false"> Notifications <span
+                                class="badge badge-pill badge-danger">4</span></a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-messages" role="tabpanel"
+                        aria-labelledby="nav-messages-tab">
+                        <div class="selectBox">
+                            <div class="select-all">
+                                <input class="custom-checkbox checkall-message" type="checkbox" name="mcheckname"
+                                    id="checkall" onclick="checkall(1)" value="">
+                                <span>Select all</span>
+                            </div>
+                            <div class="selectBtn">
+                                <button class="btn delete-btn btn-outline-primary  btn-sm" onclick="delMessages(1)">
+                                    <span>Delete</span>
+                                </button>
+                                <button class="btn mark-btn btn-outline-primary  btn-sm" onclick="setReadStatus(1)">
+                                    <span>Mark all as read</span>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="item">
+                            <li>
+                                <div class="message-left">
+                                    <div class="sub-checkbox">
+                                        <input class="custom-checkbox" type="checkbox" name="subcheck" value="">
+                                    </div>
+                                    <img src="/OSCAL/oscal-test/static/img/blog-img/user_1.jpg" alt="users">
+                                    <div class="usersMessage">
+                                        <p class="name">Aniket_Kumar000<span class="badgeMessage"></span></p>
+                                        <p class="dataTime">
+                                            29-05-2021 18:20:06
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="message-contents">
+                                    <p>dsadsadasdasdasadsdasdasdasadsadasdasdasadsadasdasdasd
+                                    </p>
+                                </div>
+                                <div class="messageBtn">
+                                    <button type="button" class="btn btn-outline-primary messageButton"
+                                        onclick="messageFun('用户姓名')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                                        </svg>
+                                        Message
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="tab-pane fade" id="nav-notifications" role="tabpanel"
+                        aria-labelledby="nav-notifications-tab">
+                        <div class="selectBox">
+                            <div class="select-all">
+                                <input class="custom-checkbox checkall-message" type="checkbox" name="mcheckname"
+                                    id="checkall" onclick="checkall(2)" value="">
+                                <span>Select all</span>
+                            </div>
+                            <div class="selectBtn">
+                                <button class="btn delete-btn btn-outline-primary  btn-sm" onclick="delMessages(2)">
+                                    <span>Delete</span>
+                                </button>
+                                <button class="btn mark-btn btn-outline-primary  btn-sm" onclick="setReadStatus(2)">
+                                    <span>Mark all as read</span>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="item">
+                            <li>
+                                <div class="notifications-left">
+                                    <div class="sub-checkbox">
+                                        <input class="custom-checkbox" type="checkbox" name="subcheck" value="">
+                                    </div>
+                                    <img src="/OSCAL/oscal-test/static/img/blog-img/user_1.jpg" alt="users">
+                                    <div class="usersMessage">
+                                        <p class="name">Aniket_Kumar000<span class="badgeMessage"></span></p>
+                                        <p class="dataTime">
+                                            29-05-2021 18:20:06
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="message-contents">
+                                    <p>has a new post "<span
+                                            class="msg-tit">dsadsadasdasdasadsdasdasdasadsadasdasdasadsadasdasdasd</span>"<a
+                                            href="#" target="_blank"> Click here</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notifications-left">
+                                    <div class="sub-checkbox">
+                                        <input class="custom-checkbox" type="checkbox" name="subcheck" value="">
+                                    </div>
+                                    <img src="/OSCAL/oscal-test/static/img/blog-img/user_1.jpg" alt="users">
+                                    <div class="usersMessage">
+                                        <p class="name">Aniket_Kumar000<span class="badgeMessage"></span></p>
+                                        <p class="dataTime">
+                                            29-05-2021 18:20:06
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="message-contents">
+                                    <p>has a new post "<span
+                                            class="msg-tit">dsadsadasdasdasadsdasdasdasadsadasdasdasadsadasdasdasd</span>"<a
+                                            href="#" target="_blank"> Click here</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+            <div class="usersInfo">
+                <div class="usersBox">
+                    <div class="usersImage">
+                        <img class="user_image" id="usersImage" data-toggle="modal" data-target="#updateImageModal"
+                            src="/OSCAL/oscal-test/static/img/user-img.jpg" alt="usersImg">
+                    </div>
+                    <p class="usersName">
+                        <span class="usersName">test</span>
+
+                    </p>
+                    <ul>
+                        <li>
+                            <p class="number">2</p>
+                            <p class="user_info">Posts</p>
+                        </li>
+                        <li>
+                            <p class="number">0</p>
+                            <p class="user_info">Following</p>
+                        </li>
+                        <li>
+                            <p class="number">1</p>
+                            <p class="user_info">Followers</p>
+                        </li>
+                        <li>
+                            <p class="number">90</p>
+                            <p class="user_info">O coin</p>
+                        </li>
+                    </ul>
+                </div>
+                <a href="./createPost.html" target="_blank">
+                    <div class="createPost">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        <span>
+                            New Post
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input rows="3" class="form-control modalInput" type="text">
+                        <div class="invalid-feedback">
+                            Reply content cannot be empty
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary submitReplayBtn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" th:include="footer :: myFooter">
+        </div>
+
+</body>
+<script src="/OSCAL/oscal-test/static/lib/js/jquery-3.3.1.min.js"></script>
+<script src="/OSCAL/oscal-test/static/js/message.js"></script>
+<script async src="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script async
+    src="https://d2kbvjszk9d5ln.cloudfront.net/yshop/upload/other/lazysizes.min-20201204070627489.js"></script>
+
+</html>

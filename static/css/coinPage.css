@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: Regular;
+    src: url('../font/MyriadPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -- reset -- */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer,
+section,
+article,
+aside,
+nav,
+address,
+figure,
+figcaption,
+menu,
+details {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption,
+th {
+    text-align: left;
+    font-weight: normal;
+}
+
+em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.1;
+    color: inherit;
+}
+
+/* -- reset end -- */
+
+.big-img {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    background-color: #F5F5F5;
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.receiveCoinBox {
+    width: 1220px;
+    margin: 0 auto;
+    display: flex
+}
+
+.receiveCoinBox p {
+    margin-bottom: 0;
+}
+
+.receiveCoinBox .receiveCoinMsg {
+    width: 817px;
+    padding: 30px 20px;
+}
+.receiveCoinBox .receiveCoinMsg .navsMenu a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.receiveCoinBox .receiveCoinMsg .coinBox {
+    background-color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.receiveCoinBox .receiveCoinMsg .coinBox ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.receiveCoinBox .receiveCoinMsg .coinBox ul li {
+    font-size: 18px;
+    font-weight: 400;
+    color: #111111;
+}
+
+.receiveCoinBox .receiveCoinMsg .coinIntroduction {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.receiveCoinBox .receiveCoinMsg .coinIntroduction .title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+    color: #111111;
+}
+
+.receiveCoinBox .receiveCoinMsg .coinIntroduction p {
+    padding: 15px 0;
+    font-size: 18px;
+}
+
+.usersInfo a,.usersInfo a:hover {
+    text-decoration: none;
+}
+
+.usersBox a,.usersBox a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.usersInfo {
+    width: 360px;
+    text-align: center;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 74px;
+}
+.usersInfo .usersBox{
+    background-color: white;
+    padding: 20px 0;
+}
+.usersInfo ul {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.postsBox p,
+.usersInfo p {
+    margin-bottom: 0;
+}
+
+.usersInfo ul li .number {
+    font-size: 18px;
+    color: #111111;
+    line-height: 1;
+}
+
+.usersInfo ul li .user_info {
+    font-size: 14px;
+    color: #646464;
+}
+
+#updateImageModal .krajee-default .file-footer-buttons {
+    display: none;
+}
+
+.usersInfo .user_image {
+    cursor: pointer;
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+}
+
+.usersInfo .usersName {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.usersInfo .usersName svg {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.usersInfo .createPost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0;
+    border: 0;
+    background-image: linear-gradient(to right, #E511CA, #7062EB, #3595F1, #16B6F3);
+    text-align: center;
+    width: 100%;
+    height: 68px;
+    line-height: 68px;
+    margin-top: 24px;
+    border-radius: 34px;
+}
+.usersInfo .createPost svg{
+    margin-right: 15px;
+}
+
+
+
+
+@media screen and (max-width:1000px)and (min-width:800px) {}
+
+@media screen and (max-width:1000px) {
+    .header_main {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 800px) {}

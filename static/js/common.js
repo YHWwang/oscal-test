@@ -18,7 +18,10 @@ $(function () {
     })
     $('#exampleModal').on('hidden.bs.modal', function (event) {
         $('.watch_video .box1').removeClass('on')
+        var elevideo = document.getElementById("video");
+        elevideo.pause()
     })
+
     $(window).scroll(function () {
         var winp = $(document).scrollTop();
         if (flag && winp > $('.mainContent').offset().top - height / 2) { // 滚动大于产品盒子高度时开始执行移动效果

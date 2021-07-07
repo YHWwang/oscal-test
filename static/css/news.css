@@ -299,6 +299,8 @@ img {
 }
 .newsContentBox .word .title{
     font-size: 38px;
+    color: #000;
+    text-align: center;
 }
 .relatedNews{
     width: 70%;

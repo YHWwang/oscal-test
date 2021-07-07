@@ -1,17 +1,27 @@
 $(function () {
+
+    $('#exampleModal').on('hidden.bs.modal', function (event) { 
+        var elevideo = $('#video')  
+          elevideo.addEventListener('pause');
+    })
     var brandList = {
         '2021': [{
-            'img': '../static/img/brand_swiper.jpg',
+            'img': '',
+            'time': '20th May 2021',
+            'title':'OSCAL launched C20, The Budget King of Android Phones',
+            'messages': 'OSCAL launched the C20, a budget smart phone packing with stylish appearance, Android 11 GO and a range of great features, to push the boundaries of affordable smart phones.'
+        },{
+            'img': 'https://www.oscal.hk/img/brand_swiper.jpg',
             'time': '10th May 2021',
-            'messages': 'OSCAL launched Tab 9, packing incredible features. OSCAL launched the Tab 9, a budget tablet packing with a range of great features and exceptional quality to push the boundaries of affordable smart devices.'
+            'messages': 'OSCAL launched Pad 8, packing incredible features. OSCAL launched the Pad 8, a budget tablet packing with a range of great features and exceptional quality to push the boundaries of affordable smart devices.'
         }],
         '2020': [{
-            'img': '../static/img/brand_swiper3.jpg',
+            'img': '/img/brand_swiper3.jpg',
             'time': '10th April 2020',
             'messages': 'OSCAL was born with the mission of letting more people enjoy the smart life brought by the beauty of technology at a very friendly price.'
         }],
         '2018': [{
-            'img': '../static/img/brand_swiper2.jpg',
+            'img': '/img/brand_swiper2.jpg',
             'time': '10th May 2018',
             'messages': 'The R&D team was established. A new brand began to take shape.'
         }],
@@ -90,6 +100,11 @@ $(function () {
     });
     // slide in
     var myTweenIn = function () {
+        if ((mySwiper.realIndex + 1) % 2 == 0) {
+            $('.swiper_box .swiper-pagination').css('left','56%')
+        } else {
+            $('.swiper_box .swiper-pagination').css('left','50%')
+        }
         new TweenMax.staggerFrom(
             [
                 '.swiper-slide-active .left',
@@ -109,6 +124,11 @@ $(function () {
 
     // slide out
     var myTweenOut = function () {
+        if ((mySwiper.realIndex + 1) % 2 == 0) {
+            $('.swiper_box .swiper-pagination').css('left','56%')
+        } else {
+            $('.swiper_box .swiper-pagination').css('left','50%')
+        }
         new TweenMax.staggerFrom(
             [
                 '.swiper-slide-active .left',

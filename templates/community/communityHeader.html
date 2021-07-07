@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OSCAL-header</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+</head>
+
+<body class="en">
+    <div id="communityHeader" th:fragment="communityHeader">
+        <link rel='stylesheet' type='text/css' href='/OSCAL/oscal-test/static/css/communityHeader.css'>
+        <link rel='stylesheet' type='text/css'
+            href="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+        <link rel="icon" href="../static/public/favicon.ico" mce_href="../static/public/favicon.ico"
+            type="image/x-icon">
+        <div class="header_main">
+            <div class="menu_box">
+                <div class="pc-header">
+                    <div class="topBox">
+                        <div class="logo">
+                            <a href="../index.html" target="_parent">
+                                <img src="/OSCAL/oscal-test/static/img/blog-img/community_logo.png" alt="logo">
+                            </a>
+                            <span class="headerTit">Oscal Community</span>
+                        </div>
+                        <div class="login">
+                            <div class="loginIcon">
+                                <ul>
+                                    <li class="searchIcon">
+                                        <div class="searchIconBox">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                            </svg>
+                                        </div>
+                                        <div class="searchInputBox input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" id="btnGroupAddon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control searchInput" placeholder="Search"
+                                                aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="./message.html" target="_self">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
+                                                fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                                <path
+                                                    d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                            </svg>
+                                            <span class="usersInfo">2</span>
+                                        </a>
+                                    </li>
+                                    <li class="loginSvg">
+                                        <a href="#" target="_self">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                fill="currentColor" class="bi loged bi-person-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                            </svg>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item menu-login" href="./login.html">Log in</a>
+                                            <a class="dropdown-item menu-sign">Sign up</a>
+                                            <a class="dropdown-item menu-quit" href="#">Quit</a>
+                                          </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menuBox">
+                        <ul class="nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../community.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./forum.html">Forum area</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">OS system</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FQA</a>
+                            </li>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Download</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Recuit</a>
+                            </li>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Photo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Circle</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Points Mall</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Activity</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/OSCAL/oscal-test/static/lib/js/jquery-3.3.1.min.js"></script>
+        <script src="/OSCAL/oscal-test/static/js/header.js"></script>
+        <script async src="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+        <script async
+            src="https://d2kbvjszk9d5ln.cloudfront.net/yshop/upload/other/lazysizes.min-20201204070627489.js"></script>
+    </div>
+
+</body>
+
+</html>
