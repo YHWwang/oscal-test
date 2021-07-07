@@ -1,12 +1,78 @@
 $(function () {
+    //proxy监听值的变化
+    var observe1 = (object, onChange) => {
+        const handler = {
+            get(target, property, receiver) {
+                try {
+                    return new Proxy(target[property], handler);
+                } catch (err) {
+                    return Reflect.get(target, property, receiver);
+                }
+            },
+            set(target, key, value, receiver) {
+                onChange(value);
+                return Reflect.set(target, key, value, receiver);
+            }
+        };
+        return new Proxy(object, handler);
+    };
+    var html = `
+    <div class="rightdiv">
+        <a class="firstPage">
+            <span >First</span>
+        </a>
+        <a class="prePage" >
+            <span >&lt;</span>
+        </a>
+        <a class="currentPage">
+            <span>1</span>
+        </a>
+        <a class="nextPage" >
+            <span >&gt;</span>
+        </a>
+        <a class="lastPage">
+            <span >Last</span>
+        </a>
+    </div>
+   `
 
+    var totalPage = 31
+    var pageSize = 10
+    var obj = {
+        currentPage: 1
+    }
+    var lastPage = Math.ceil(totalPage / pageSize)
+    navMain = function (tabName) {
+        $('.Pagination').removeClass('paginationActive')
+        watchedObj.currentPage = 1 //初始化当前页
+        switch (tabName) {
+            case 'following':
+                $('.followingsPagination').html(html).addClass('paginationActive');
+                clickFun()
+                break;
+            case 'posts':
+                $('.postsPagination').html(html).addClass('paginationActive');
+                clickFun()
+                break;
+            case 'likes': $('.likesPagination').html(html).addClass('paginationActive');
+                clickFun()
+                break;
+            case 'followers': $('.followersPagination').html(html).addClass('paginationActive');
+                clickFun()
+                break;
+            case 'comments': $('.commentsPagination').html(html).addClass('paginationActive');
+                clickFun()
+                break;
+            default:
+                break;
+        }
+    }
 
-     if(0){//(GetQueryString("id") == '登录获取的id'
-      $('.usersInfo .user_image').attr({
+    if (1) {//(GetQueryString("id") == '登录获取的id'
+        $('.usersInfo .user_image').attr({
             'data-toggle': "modal",
             'data-target': "#updateImageModal",
         })
-       
         $('.usersInfo .usersName svg').click(function () {//修改弹窗信息
             $('#modifyModal .modal-footer .submitReplayBtn').hide()
             $('#modifyModal .modal-footer .modifyUsersNameBtn').show()
@@ -20,16 +86,47 @@ $(function () {
             $('#modifyModal .modal-body .modalInput').addClass('modifyUsersName')
             $('#modifyModal .modal-body .modifyUsersName').val($(this).parents('.usersName').find('.usersName').text())
         })
-   }
-   else{
-    $('.usersInfo .usersName svg').hide()
-    $('.followBtn').hide()
-    $('.followersBtn').hide()
-   }
+    } else {
+        $('.usersInfo .usersName svg').hide()
+        $('.followBtn').hide()
+        $('.followersBtn').hide()
+    }
 
-   clickNav = function(index){
-    $('#'+index).trigger('click')
-   }
+
+    $('.followingsPagination').html(html)
+    var watchedObj = observe1(obj, (val) => {
+        // console.log(`哈哈哈，监听到值变化为${val}了`);
+    });
+    clickFun()
+    function clickFun() {
+        $('.paginationActive .rightdiv .firstPage').click(() => {//第一页
+            watchedFun(1)
+            $('.paginationActive .rightdiv .currentPage span').text(watchedObj.currentPage)
+        })
+        $('.paginationActive .rightdiv .lastPage').click(() => {//最后一页
+            watchedFun(lastPage)
+            $('.paginationActive .rightdiv .currentPage span').text(watchedObj.currentPage)
+        })
+        $('.paginationActive .rightdiv .prePage').click(() => {//上一页
+            watchedFun(watchedObj.currentPage > 1 ? watchedObj.currentPage - 1 : 1)
+            $('.paginationActive .rightdiv .currentPage span').text(watchedObj.currentPage)
+        })
+        $('.paginationActive .rightdiv .nextPage').click(() => {//下一页
+            watchedFun(watchedObj.currentPage < lastPage ? watchedObj.currentPage + 1 : lastPage)
+            $('.paginationActive .rightdiv .currentPage span').text(watchedObj.currentPage)
+        })
+    }
+
+
+    function watchedFun(size) {
+        watchedObj.currentPage = size
+        size == 1 ? $('.rightdiv .prePage').hide() : $('.rightdiv .prePage').show()
+        size == 4 ? $('.rightdiv .nextPage').hide() : $('.rightdiv .nextPage').show()
+    }
+
+    clickNav = function (index) {
+        $('#' + index).trigger('click')
+    }
 
     $('#modifyModal .modal-footer .modifyUsersNameBtn').click(() => {//提交修改用户名
         let name = $('#modifyModal .modal-body .modifyUsersName').val()
@@ -40,8 +137,8 @@ $(function () {
         }
     })
 
-    $('.usersInfo ul li').click(function(){
-        $('#'+$(this).attr('aria-controls')).addClass('active').siblings().removeClass('active')
+    $('.usersInfo ul li').click(function () {
+        $('#' + $(this).attr('aria-controls')).addClass('paginationActive').siblings().removeClass('paginationActive')
     })
 
     followMessageFun = function (name) {//修改弹窗信息
@@ -102,7 +199,7 @@ $(function () {
                 maxFileCount: 1, //表示允许同时上传的最大文件个数
                 enctype: 'multipart/form-data',
                 validateInitialCount: true,
-                msgSizeTooLarge:'File "{name}" ({size} KB) exceeds maximum allowed upload size of {maxSize} KB. Please retry your upload!',
+                msgSizeTooLarge: 'File "{name}" ({size} KB) exceeds maximum allowed upload size of {maxSize} KB. Please retry your upload!',
                 previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
                 msgFilesTooMany: "The number of files selected for upload ({n}) exceeds the maximum allowed value {m}!",
             })
@@ -136,5 +233,6 @@ $(function () {
         var r = window.location.search.substr(1).match(regex);
         if (r != null) return unescape(r[2]);
         return null;
-      }
+    }
+
 })

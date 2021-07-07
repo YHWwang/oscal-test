@@ -21,10 +21,10 @@
             <div class="usersBox">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-link active" id="nav-messages-tab" data-toggle="tab" href="#nav-messages"
+                        <a class="nav-link active" id="nav-messages-tab" onclick="navMain('messages')" data-toggle="tab" href="#nav-messages"
                             role="tab" aria-controls="nav-messages" aria-selected="true">Messages <span
                                 class="badge badge-pill badge-danger">2</span></a>
-                        <a class="nav-link" id="nav-notifications-tab" data-toggle="tab" href="#nav-notifications"
+                        <a class="nav-link" id="nav-notifications-tab" onclick="navMain('notifications')" data-toggle="tab" href="#nav-notifications"
                             role="tab" aria-controls="nav-notifications" aria-selected="false"> Notifications <span
                                 class="badge badge-pill badge-danger">4</span></a>
                     </div>
@@ -78,19 +78,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination messagesPagination paginationActive">
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="nav-notifications" role="tabpanel"
                         aria-labelledby="nav-notifications-tab">
@@ -151,19 +140,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination notificationsPagination paginationActive">
+                        </div>
                     </div>
 
                 </div>

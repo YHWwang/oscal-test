@@ -152,8 +152,12 @@ h6 {
     background-color: #fff;
     padding: 30px 20px;
 }
-
-.forumContent .forum-left .title {
+.forumContent .forum-left .title{
+    font-size: 24px;
+    font-weight: 400;
+    color: #111111;
+}
+.forumContent .forum-left .forumList .title {
     font-size: 24px;
     font-weight: 400;
     color: #111111;
@@ -162,7 +166,7 @@ h6 {
     align-items: center;
 }
 
-.forumContent .forum-left .title svg {
+.forumContent .forum-left .forumList .title svg {
     vertical-align: revert;
 }
 

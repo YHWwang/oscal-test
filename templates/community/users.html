@@ -23,15 +23,15 @@
             <div class="usersBox">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-link active" id="nav-following-tab" data-toggle="tab" href="#nav-following"
+                        <a class="nav-link active" id="nav-following-tab" onclick="navMain('following')" data-toggle="tab" href="#nav-following"
                             role="tab" aria-controls="nav-following" aria-selected="true">Following (2)</a>
-                        <a class="nav-link" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab"
+                        <a class="nav-link" id="nav-posts-tab" onclick="navMain('posts')" data-toggle="tab" href="#nav-posts" role="tab"
                             aria-controls="nav-posts" aria-selected="false">Posts (2)</a>
-                        <a class="nav-link" id="nav-likes-tab" data-toggle="tab" href="#nav-likes" role="tab"
+                        <a class="nav-link" id="nav-likes-tab" onclick="navMain('likes')" data-toggle="tab" href="#nav-likes" role="tab"
                             aria-controls="nav-likes" aria-selected="false">Likes (2)</a>
-                        <a class="nav-link" id="nav-followers-tab" data-toggle="tab" href="#nav-followers" role="tab"
+                        <a class="nav-link" id="nav-followers-tab" onclick="navMain('followers')" data-toggle="tab" href="#nav-followers" role="tab"
                             aria-controls="nav-followers" aria-selected="false">Followers (4)</a>
-                        <a class="nav-link" id="nav-comments-tab" data-toggle="tab" href="#nav-comments" role="tab"
+                        <a class="nav-link" id="nav-comments-tab" onclick="navMain('comments')" data-toggle="tab" href="#nav-comments" role="tab"
                             aria-controls="nav-comments" aria-selected="false">Comments (0)</a>
                     </div>
                 </nav>
@@ -108,21 +108,10 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination followingsPagination paginationActive">
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab" >
+                    <div class="tab-pane fade" id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
                         <ul>
                             <li>
                                 <div class="postsBox">
@@ -169,19 +158,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination postsPagination">
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="nav-likes" role="tabpanel" aria-labelledby="nav-likes-tab">
                         <ul>
@@ -274,19 +252,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination likesPagination">
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
                         <ul>
@@ -324,19 +291,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination followersPagination">
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-comments-tab">
                         <ul>
@@ -388,27 +344,16 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div class="Pagination commentsPagination">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="usersInfo">
                 <div class="usersBox">
                     <div class="usersImage">
-                        <img class="user_image" id="usersImage"
-                            src="/OSCAL/oscal-test/static/img/user-img.jpg" alt="usersImg">
+                        <img class="user_image" id="usersImage" src="/OSCAL/oscal-test/static/img/user-img.jpg"
+                            alt="usersImg">
                     </div>
                     <p class="usersName">
                         <span class="usersName">test</span>
@@ -436,10 +381,10 @@
                             <p class="user_info">Followers</p>
                         </li>
                         <li>
-                          <a href="./coinPage.html" target="_self">
-                            <p class="number">90</p>
-                            <p class="user_info">O coin</p>
-                          </a>
+                            <a href="./coinPage.html" target="_self">
+                                <p class="number">90</p>
+                                <p class="user_info">O coin</p>
+                            </a>
                         </li>
                     </ul>
                 </div>

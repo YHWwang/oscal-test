@@ -17,8 +17,24 @@ $(function () {
     $('.loginContent .goLogin a').click(function () {
         $('#home-tab').click()
     })
-  
-    $('.sendCode').click(function () {
+
+    $('.sendCode').click(function () {//获取验证码
+        let email = $('#validationCustom03').val()
+        
+        let data = {
+            email: email,
+            busType: 'register'
+        }
+        if($(this).hasClass('forget')){
+            data = {
+                busType: 'userForgetPass'
+            }
+            email = $('#validationForgotPwd01').val() 
+        }
+        if (email == '' || email == null) {
+            alert('E-mail can not be empty')
+            return false
+        }
         $(this).addClass('disabled')
         let count = 60
         let text = $(this).text()
@@ -32,7 +48,17 @@ $(function () {
                 $(this).text(text)
             }
         }, 1000);
-
+        $.ajax({
+            type: "post",
+            url: "/web/user/login/sendCode/getCode",
+            dataType: 'json',
+            data: '{"email":' + data.code + ',"busType":' + data.busType + '}',
+            async: false,
+            contentType: "application/json;charset=UTF-8",
+            success: function (req) {
+                debugger
+            }
+        })
     })
 
     window.addEventListener('load', function () { //登录功能验证
@@ -56,15 +82,33 @@ $(function () {
                         localStorage.setItem("passpword", data.passpword);
                         localStorage.setItem("remember", data.remember);
                         console.log(data)
+                        login(data.email, data.passpword)
                     } else {
                         data.remember = false
                         localStorage.setItem("remember", data.remember);
+                        console.log(data.email, data.passpword)
+                        login(data.email, data.passpword)
                     }
                 }
                 form.classList.add('was-validated');
             }, false);
         });
     }, false);
+
+    function login(email, passpword) {
+        $.ajax({
+            type: "post",
+            url: "/web/user/login/userLogin",
+            dataType: 'json',
+            data: '{"sys_user_account":' + email + ',"login_password":' + passpword + '}',
+            async: false,
+            contentType: "application/json;charset=UTF-8",
+            success: function (req) {
+                localStorage.setItem('cateId',req.data.id)
+                window.location.href('/community')
+            }
+        })
+    }
 
     window.addEventListener('load', function () { //创建用户功能验证
         var forms = document.getElementsByClassName('needs-validation-signUpForm');
@@ -79,9 +123,21 @@ $(function () {
                     let data = {
                         name: event.currentTarget[0].value,
                         email: event.currentTarget[1].value,
-                        passpword: event.currentTarget[2].value,
+                        code: event.currentTarget[2].value,
+                        passpword: event.currentTarget[3].value,
+
                     }
-                    console.log(data)
+                    $.ajax({
+                        type: "post",
+                        url: "/web/user/login/userRegister",
+                        dataType: 'json',
+                        data: '{"code":' + data.code + ',"user_account":' + data.email + ',"sys_user_account":' + data.name + ',"login_password":' + data.passpword + '}',
+                        async: false,
+                        contentType: "application/json;charset=UTF-8",
+                        success: function (req) {
+                            debugger
+                        }
+                    })
                 }
                 form.classList.add('was-validated');
 
@@ -105,12 +161,18 @@ $(function () {
                         passpword: event.target[2].value,
                     }
                     console.log(data)
-                    $('.successWord').html(`
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg>
-                    <span>An e-mail with instructions to create a new password has been sent to you.</span>
-                    `)
+                    $.ajax({
+                        type: "post",
+                        url: "/web/user/login/userRegister",
+                        dataType: 'json',
+                        data: '{"code":' + data.code + ',"user_account":' + data.email + ',"sys_user_account":' + data.name + ',"login_password":' + data.passpword + '}',
+                        async: false,
+                        contentType: "application/json;charset=UTF-8",
+                        success: function (req) {
+
+                        }
+                    })
+                   
 
                 }
                 form.classList.add('was-validated');

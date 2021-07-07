@@ -459,7 +459,36 @@ h6 {
     display: none;
 }
 
+.Pagination {
+    display: block;
+    padding: 5vw 0 3vw 0;
+    text-align: center;
+}
 
+
+.Pagination .rightdiv {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Pagination .rightdiv a {
+    color: #000;
+    text-decoration: none;
+}
+.rightdiv .prePage{
+    display: none;
+}
+
+.Pagination .rightdiv span {
+    display: inline-block;
+    padding: 5px 20px;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+}
+
+.Pagination .rightdiv span:hover {
+    color: gray;
+}
 
 
 

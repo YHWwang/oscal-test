@@ -23,6 +23,9 @@ $(function () {
     //     }
 
     // })
+    if(localStorage.email){
+        $('.loged').show().siblings().hide()//登录成功改变状态
+    }
     var M1 = $('.searchIcon ul li.loginSvg')
     M1.on('click',function(e){e.stopPropagation();})
     .find('a').on('click',function(){
@@ -30,7 +33,7 @@ $(function () {
     });
     $(document).on('click',function(){M1.find('.dropdown-menu').hide()})
 
-    // $('.loged').show().siblings().hide()//登录成功改变状态
+    
     $('.searchIcon').click(function () {
         $(this).find('.searchIconBox svg').hide()
         $('div.searchInputBox').css('display','flex')
