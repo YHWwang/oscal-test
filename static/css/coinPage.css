@@ -130,8 +130,8 @@ h6 {
     background-color: #F5F5F5;
     min-height: 100vh;
     padding-top: 100px;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 
 .receiveCoinBox {
@@ -166,7 +166,97 @@ h6 {
     justify-content: space-around;
     align-items: center;
 }
+.receiveCoinBox .receiveCoinMsg .nav-tabs{
+    border-bottom: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    margin-top: 25px;
 
+}
+.receiveCoinBox .receiveCoinMsg .nav-tabs .nav-link{
+    width: 200px;
+    font-size: 20px;
+    border: 0;
+    color: #000;
+}
+#myTabContent{
+    background-color: white;
+    padding-bottom: 30px;
+}
+#myTabContent table{
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
+}
+#myTabContent table tr{
+    border-bottom: 1px solid #E4E4E4;
+    font-size: 14px;
+}
+#myTabContent table tr:not(:nth-child(1)) td span{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+   
+    border-radius: 2px;
+    line-height:normal;
+    display: inline-block;
+}
+#myTabContent table tr:nth-child(2) td:nth-child(1) span{
+    background-color: #EB7251;
+    color: white;
+}
+#myTabContent table tr:nth-child(3) td:nth-child(1) span{
+    background-color: #F39A5E;
+    color: white;
+}
+#myTabContent table tr:nth-child(4) td:nth-child(1) span{
+    background-color: #F5C866;
+    color: white;
+}
+/* #myTabContent table tr:nth-child(2) td:nth-child(1){
+    background-color: red;
+} */
+#myTabContent table th{
+    padding: 30px 0;
+    font-size: 16px;
+}
+#myTabContent table td{
+    padding: 15px 0;
+}
+
+.Pagination {
+    display: block;
+    padding: 5vw 0 3vw 0;
+    text-align: center;
+}
+
+
+.Pagination .rightdiv {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Pagination .rightdiv a {
+    color: #000;
+    text-decoration: none;
+}
+.rightdiv .prePage{
+    display: none;
+}
+
+.Pagination .rightdiv span {
+    display: inline-block;
+    padding: 5px 20px;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+}
+
+.Pagination .rightdiv span:hover {
+    color: gray;
+}
+.receiveCoinBox .receiveCoinMsg .nav-tabs .nav-link.active{
+    color: #007bff;
+}
 .receiveCoinBox .receiveCoinMsg .coinBox ul li {
     font-size: 18px;
     font-weight: 400;
@@ -174,21 +264,18 @@ h6 {
 }
 
 .receiveCoinBox .receiveCoinMsg .coinIntroduction {
-    background-color: #fff;
     padding: 20px;
-    margin-top: 20px;
 }
 
 .receiveCoinBox .receiveCoinMsg .coinIntroduction .title {
     font-size: 24px;
     font-weight: bold;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 10px;
     color: #111111;
 }
 
 .receiveCoinBox .receiveCoinMsg .coinIntroduction p {
-    padding: 15px 0;
+    padding: 10px 0;
     font-size: 18px;
 }
 
@@ -206,7 +293,7 @@ h6 {
     text-align: center;
     position: relative;
     margin-left: 20px;
-    margin-top: 74px;
+    margin-top: 82px;
 }
 .usersInfo .usersBox{
     background-color: white;
@@ -287,6 +374,9 @@ h6 {
 @media screen and (max-width:1000px) {
     .header_main {
         width: 1000px;
+    }
+    .receiveCoinBox{
+        width: 98%;
     }
 }
 

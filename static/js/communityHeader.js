@@ -1,5 +1,24 @@
 $(function () {
-
+    let dom = $('.header_main .pc-header .menuBox .nav li')
+    // console.log(sessionStorage.getItem('communityMenu'))
+    if (sessionStorage.getItem('communityMenu') != null) {
+        $('.header_main .pc-header .menuBox .nav li').removeClass('active')
+        dom.each((index, item) => {
+            if (dom.eq(index).find('a').text() == sessionStorage.getItem('communityMenu')) {
+                dom.eq(index).addClass('active')
+                return false
+            }
+        })
+    } else {
+        dom.eq(0).addClass('active')
+    }
+    $('.menu_box .login .loginIcon ul li .usersInfo').text() > 99 ? $('.menu_box .login .loginIcon ul li .usersInfo').text('∞') : ''
+    $(document).on('click', function () { M1.find('.dropdown-menu').hide() })
+    $('.header_main .pc-header .menuBox .nav li').click(function () {//菜单点击记录当前页面
+        // $('.header_main .pc-header .menuBox .nav li').removeClass('active')
+        $(this).addClass('active').siblings().removeClass('active')
+        sessionStorage.setItem('communityMenu', $(this).find('a').text())
+    })
     // $('.app-header .menu-icon').click(function () {
     //     $(this).toggleClass('clicked')
     //     $('.app-header .menu').toggleClass('active')
@@ -23,28 +42,23 @@ $(function () {
     //     }
 
     // })
-    if(localStorage.email){
+    if (localStorage.email) {
         $('.loged').show().siblings().hide()//登录成功改变状态
     }
     var M1 = $('.searchIcon ul li.loginSvg')
-    M1.on('click',function(e){e.stopPropagation();})
-    .find('a').on('click',function(){
-        M1.find('.dropdown-menu').show();
-    });
-    $(document).on('click',function(){M1.find('.dropdown-menu').hide()})
+    M1.on('click', function (e) { e.stopPropagation(); })
+        .find('a').on('click', function () {
+            M1.find('.dropdown-menu').show();
+        });
+    $(document).on('click', function () { M1.find('.dropdown-menu').hide() })
 
-    
+
     $('.searchIcon').click(function () {
-        $(this).find('.searchIconBox svg').hide()
-        $('div.searchInputBox').css('display','flex')
+        $('.searchIconBox .searchInput').addClass('active')
+        
         $('.searchInput').focus()
     })
-    $(".searchInput").blur(function(){
-        setTimeout(function(){//添加时间定时器
-            $('div.searchInputBox').css('display','none')
-            $('.searchIcon').find('.searchIconBox svg').show()
-        },100);
+    $(".searchInput").blur(function () {
+        $('.searchIconBox .searchInput').removeClass('active')
     });
-    
-  
 })

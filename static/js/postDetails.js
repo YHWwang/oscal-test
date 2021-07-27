@@ -1,4 +1,5 @@
 $(function () {
+  var vote = 0
   var height = window.innerHeight
   var ImgWidth = document.body.clientWidth //获取默认宽度
   var commentsData = {
@@ -29,8 +30,10 @@ $(function () {
       scrollTop: $('#summernoteBox').offset().top - height * .3
     }, 500);
   })
-
-  $('.shareSvg').click(function () {//点赞
+  shareSvg = function(index){
+    vote = 1
+  }
+  $('.likesSvg').click(function () {//点赞
     $(this).find('.active').removeClass('active').siblings().addClass('active')
     $(this).find('.active').hasClass('bi-hand-thumbs-up-fill') ? $(this).addClass('act') : $(this).removeClass('act')
   })
@@ -123,7 +126,16 @@ $(function () {
           let data = {
             content: $('#summernote').val(),
           }
-          console.log(data)
+          var regex = data.content.replace(/(<([^>]+)>)/ig,'')
+          regex.length<5? $('#summernoteBox .invalid-feedback').show():$('#summernoteBox .invalid-feedback').hide()
+          let alert = `
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+           Comment successful
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>`
+           $('.alertSuccess').html(alert)
         }
         form.classList.add('was-validated');
 

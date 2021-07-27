@@ -133,17 +133,40 @@ h6 {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    margin-top: 150px;
-    height: calc(100vh - 60px);
+    margin-top: auto;
+    height: 100vh;
     background-color: #F5F5F5;
+    padding: 5% 0;
+}
+
+.loginContent .alert-danger {
+    display: none;
+}
+
+.loginContent .alert-success {
+    color: #155724 !important;
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+}
+
+.loginContent .alert-danger {
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: 11;
+}
+
+.loginContent .alert-danger .errorMsg {
+    margin-bottom: 0;
 }
 
 .loginContent {
-    position: absolute;
+    position: relative;
     border-radius: 6px;
-    top: 10%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     font-family: MyriadPro;
     width: 450px;
     background-color: white;
@@ -283,8 +306,14 @@ div.border {
     height: 50px;
     line-height: 50px;
     right: 10px;
+    cursor: pointer;
 }
-
+.eyeIcon svg{
+    display: none;
+}
+.eyeIcon svg.active{
+    display: inline-block;
+}
 #myTab .nav-item {
     width: 50%;
     height: 66px;

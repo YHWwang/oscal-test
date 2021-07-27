@@ -6,12 +6,14 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: googleSans;
     src: url('../font/GOOGLESANS-MEDIUM.TTF');
     font-weight: normal;
     font-style: normal;
 }
+
 /* -- reset -- */
 html,
 body,
@@ -200,6 +202,7 @@ img {
     height: 100vh;
     height: calc(var(--vh, 1vh)* 50);
 }
+
 .watch_video .modal-dialog {
     max-width: 1000px;
     margin: 1.75rem auto;
@@ -212,9 +215,11 @@ img {
     top: 30%;
     z-index: 1;
 }
-.watch_video .box1.on{
+
+.watch_video .box1.on {
     z-index: auto;
 }
+
 .watch_video img {
     object-fit: cover;
     height: 100%;
@@ -475,6 +480,7 @@ img {
         width: 1000px;
     } */
 }
+
 @media screen and (max-width: 800px) {
     .mainContent .content .product_word .tit p .line{
         height: 46px;

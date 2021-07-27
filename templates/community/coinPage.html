@@ -14,16 +14,16 @@
 </head>
 
 <body class="en">
-    <div id="header" th:include="header :: myHeader">
-    </div>
+<div th:include="communityHeader :: communityHeader">
+</div>
     <div id="AMain" class="main">
         <div class="receiveCoinBox">
            
             <div class="receiveCoinMsg">
                 <div class="navsMenu">
-                    <p><a href="../community.html">Home</a> > xxx</p>
+                    <p><a href="../community.html">Home</a> > Collection rules</p>
                 </div>
-                <div class="coinBox">
+                <!--<div class="coinBox">
                     <ul>
                         <li>
                             Sign in this month(2)
@@ -35,18 +35,118 @@
                             Continuous attendance(3)
                         </li>
                     </ul>
-                </div>
+                </div>-->
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-income-tab" onclick="navMain(1)" data-toggle="tab" href="#nav-income" role="tab"
+                            aria-controls="nav-income" aria-selected="true">O币收入</a>
+                        <a class="nav-link" id="nav-expenditure-tab" onclick="navMain(2)" data-toggle="tab" href="#nav-expenditure"
+                            role="tab" aria-controls="nav-expenditure" aria-selected="false"> O币支出</a>
+                        <a class="nav-link" id="nav-rule-tab" data-toggle="tab" href="#nav-rule" role="tab"
+                            aria-controls="nav-rule" aria-selected="false"> O币规则</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="nav-income" role="tabpanel"
+                        aria-labelledby="nav-income-tab">
+                        <table>
+                            <tr>
+                                <th>排名</th>
+                                <th>昵称</th>
+                                <th>打赏次数</th>
+                                <th>当月打赏</th>
+                                <th>累计打赏</th>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                        <div class="Pagination incomePagination paginationActive">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="nav-expenditure" role="tabpanel"
+                        aria-labelledby="nav-expenditure-tab">
+                        <table>
+                            <tr>
+                                <th>排名</th>
+                                <th>打赏的博主</th>
+                                <th>打赏次数</th>
+                                <th>当月打赏</th>
+                                <th>累计打赏</th>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td><span>1</span></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                        <div class="Pagination expenditurePagination paginationActive">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-rule" role="tabpanel" aria-labelledby="nav-rule-tab">
+                        <div class="ruleBox">
                 <div class="coinIntroduction coinRules">
                     <p class="title">Rules for earning o currency</p>
-                    <p>1 在社区登录签到 每次可以获得5个O币</p>
-                    <p>2 每次发表一个帖子且点赞和评论人数超过10人奖励10个O币，点赞和评论的人数大于20人奖励20个O币</p>
-                    <p>3 每次发表帖子，其他用户可以根据喜好打赏，每次每个用户在同一个博主的同一个帖子上打赏不能超过 10个O币</p>
+                    <p>1 Log in to the community and sign in, you can get 5 O coins each time</p>
+                    <p>2 Every time a post is published and the number of likes and comments exceeds 10 people, 10 O coins will be awarded, and the number of likes and comments greater than 20 people will be awarded 20 O coins.</p>
+                    <p>3 Every time a post is published, other users can give rewards according to their preferences. Each time each user can give rewards on the same post of the same blogger, no more than 10 O coins can be given.</p>
                 </div>
                 <div class="coinIntroduction coinUse">
                     <p class="title">The use of O coins</p>
-                    <p>1 获得O币后，你可以打赏给你喜欢的博主所发的帖子 </p>
-                    <p>2 一定数量的O币可以在O币商城（积分商城）兑换、抽奖、竞拍你喜欢的产品 </p>
-                    <p>3 获得一定数量的O币后 可以参与我们产品体验的机会</p>
+                    <p>1 After getting O coins, you can reward the posts posted by bloggers you like </p>
+                    <p>2 A certain amount of O Coins can be exchanged, lottery, and bid for your favorite products in the O Coin Mall (Points Mall) </p>
+                    <p>3 Opportunities to participate in our product experience after obtaining a certain amount of O coins</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="usersInfo">
@@ -56,7 +156,7 @@
                     </div>
                     <p class="usersName">
                         <span class="usersName">test</span>
-                        
+
                     </p>
                     <ul>
                         <li>
@@ -96,10 +196,11 @@
        
         <div id="footer" th:include="footer :: myFooter">
         </div>
-
+    </div>
 </body>
 <script src="/OSCAL/oscal-test/static/lib/js/jquery-3.3.1.min.js"></script>
 <script async src="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+<script src="/OSCAL/oscal-test/static/js/coinPage.js"></script>
 <script async
     src="https://d2kbvjszk9d5ln.cloudfront.net/yshop/upload/other/lazysizes.min-20201204070627489.js"></script>
 

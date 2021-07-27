@@ -1,4 +1,15 @@
 $(function () {
+    var messageId = ''
+    var msgHtml = ''
+    var modelsIds = ''
+    var totalPage =0
+    var pageSize = 10
+    var obj = {
+        currentPage: 1
+    }
+    var lastPage = 0
+    htmlList(1)
+
     var checkAllFlag = false
     var checkAllFlag2 = false
     //proxy监听值的变化
@@ -37,13 +48,9 @@ $(function () {
     </a>
 </div>
 `
+$('.Pagination.paginationActive').html(html)
 
-    var totalPage = 31
-    var pageSize = 10
-    var obj = {
-        currentPage: 1
-    }
-    var lastPage = Math.ceil(totalPage / pageSize)
+
     navMain = function (tabName) {
         $('.Pagination').removeClass('paginationActive')
         watchedObj.currentPage = 1 //初始化当前页
@@ -85,12 +92,69 @@ $(function () {
         })
     }
 
-
+    watchedObj.currentPage == lastPage ? $('.rightdiv .nextPage').hide() : $('.rightdiv .nextPage').show()
     function watchedFun(size) {
+        // console.log(size)
+        htmlList(size)
         watchedObj.currentPage = size
         size == 1 ? $('.rightdiv .prePage').hide() : $('.rightdiv .prePage').show()
-        size == 4 ? $('.rightdiv .nextPage').hide() : $('.rightdiv .nextPage').show()
+        size == lastPage ? $('.rightdiv .nextPage').hide() : $('.rightdiv .nextPage').show()
     }
+    function htmlList(size) {
+        $.ajax({//
+            type: "post",
+            url: "/web/user/login/getMessageList",
+            dataType: 'json',
+            data: '{"pageNum":"' + size + '"}',
+            async: false,
+            contentType: "application/json;charset=UTF-8",
+            success: function (req) {
+                if (req.data.list == 0) {
+                    $('.paginationActive').hide()
+                }
+                let index = ''
+                totalPage = req.data.total
+                lastPage = Math.ceil(totalPage / pageSize)
+                msgHtml = ''
+                for (let data of req.data.list) {
+                   data.message_status == 0 ? index++ : ''
+                    msgHtml += `<li>
+                    <div class="message-left">
+                        <div class="sub-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="subcheck" value="${data.id}">
+                        </div>
+                        <img src="${data.head_photo}" alt="users">
+                        <div class="usersMessage">
+                            <p class="name">${data.sys_user_account}
+                            ${data.message_status==0?`<span class="badgeMessage"></span>`:''}
+                            </p>
+                            <p class="dataTime">
+                            ${data.message_cre}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message-contents">
+                        <p>${data.message}
+                        </p>
+                    </div>
+                    <div class="messageBtn">
+                        <button type="button" class="btn btn-outline-primary messageButton"
+                            onclick="messageFun('${data.send_user_id}','${data.sys_user_account}','${data.id}')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                            </svg>
+                            Message
+                        </button>
+                    </div>
+                </li>`
+                }
+                $('#nav-messages .item').html(msgHtml)
+                $('#nav-messages-tab span').text(index)
+            }
+        })
+      }
     checkall = function (num) {
         if (num == 1) {
             let checked = $('#nav-messages input[name=subcheck]')
@@ -121,12 +185,31 @@ $(function () {
             }
         }
     }
+    $(' .comments_user_btn span svg').click(function (event) {
+        $(this).parent().siblings().toggle('fast')
+    })
+
+    $("body").on("click", function () {
+        let dom = $('.comments_user_btn .comments_user_menu')
+        for (let i = 0; i < dom.length; i++) {
+            if (dom.eq(i).attr('style') == 'display: block;') {
+                dom.eq(i).hide('fast')
+            }
+        }
+    });
 
     setReadStatus = function (num) {//移除消息提示
+        let checked =''
         if (num == 1) {
-            let checked = $('#nav-messages input[name=subcheck]:checked')
+           
+            for(let data of $('#nav-messages input[name=subcheck]:checked')){
+                // console.log(data.attributes.value.nodeValue)
+                checked += data.attributes.value.nodeValue+','
+            }
+            checked = checked.substring(0,checked.length-1)
             if (checked.length != 0) {
-                console.log(checked)
+                // console.log(checked)
+                ReadStatusFun(checked)
             }
         }
         else if (num == 2) {
@@ -138,9 +221,24 @@ $(function () {
     }
     delMessages = function (num) {//删除消息
         if (num == 1) {
-            let checked = $('#nav-messages input[name=subcheck]:checked')
+            let checked =''
+            for(let data of $('#nav-messages input[name=subcheck]:checked')){
+                // console.log(data.attributes.value.nodeValue)
+                checked += data.attributes.value.nodeValue+','
+            }
+            checked = checked.substring(0,checked.length-1)
             if (checked.length != 0) {
                 console.log(checked)
+                $.ajax({
+                    type: "delete",
+                    url: "/web/user/login/"+checked,
+                    dataType: 'json',
+                    async: false,
+                    contentType: "application/json;charset=UTF-8",
+                    success: function (req) {
+                        location.reload()
+                    }
+                })
             }
         }
         else if (num == 2) {
@@ -150,21 +248,49 @@ $(function () {
             }
         }
     }
-
-    messageFun = function (name) {//回复弹窗信息
+    messageClose = function (id, th) {
+        console.log(id)
+        $(th).parents('li').hide('fast')
+    }
+    messageFun = function (userId, name,id) {//回复弹窗信息
         $('.messageButton').attr({
             'data-toggle': "modal",
             'data-target': "#messageModal",
         })
         $('#messageModal .modal-header h5').text('Reply ' + name)
+        messageId = userId
+        modelsIds = id
+    }
+    function ReadStatusFun(checked){
+        $.ajax({
+            type: "put",
+            url: "/web/user/login/"+checked,
+            dataType: 'json',
+            async: false,
+            contentType: "application/json;charset=UTF-8",
+            success: function (req) {
+                location.reload()
+            }
+        })
     }
     $('#messageModal .modal-footer .submitReplayBtn').click(function () {//提交回复信息
         let val = $('#messageModal .modal-body .modalInput').val()
         if (val == '' || val == null) {
             $('#messageModal .modal-body .invalid-feedback').show()
         } else {
-            console.log(val)
-            $('#messageModal .modal-body .invalid-feedback').hide()
+            $.ajax({
+                type: "post",
+                url: "/web/user/login/sendMessage",
+                dataType: 'json',
+                data: '{"to_user_id":"' + messageId + '","message":"' + $('#messageModal .modal-body .modalInput').val() + '"}',
+                async: false,
+                contentType: "application/json;charset=UTF-8",
+                success: function (req) {
+                    $('#messageModal').hide()
+                    ReadStatusFun(modelsIds)
+                }
+            })
+          
         }
     })
 

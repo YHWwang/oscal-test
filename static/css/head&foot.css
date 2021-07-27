@@ -181,69 +181,9 @@ a {
 
 .menu_box .menu {
     width: 80%;
+
 }
 
-.logined{display: none;}
-
-.menu_box .login .loginIcon ul li .dropdown-menu{
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: auto;
-    margin: 1rem 0 0;
-}
-.menu_box .login {
-    position: absolute;
-    right: -80px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 38px;
-}
-
-.menu_box .login svg {
-    cursor: pointer;
-}
-
-.menu_box .login .loginIcon {
-    float: right;
-    height: 100%;
-}
-
-.menu_box .login .loginIcon ul {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: auto;
-}
-
-.menu_box .login .loginIcon ul li{
-    margin-left: 30px;
-    position: relative;
-}
-div.searchInputBox{
-    display: none;
-}
-.searchInputBox .input-group-text,.searchInputBox .form-control{
-    background-color: white;
-    border: 0;
-}
-.searchInput.form-control:focus{
-    box-shadow:none;
-}
-
-.menu_box .login .loginIcon ul li .usersInfo{
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: red;
-    color: white;
-    top: -18px;
-    font-size: 12px;
-    text-align: center;
-    line-height: 18px;
-    right: -10px;
-    border-radius: 50%;
-}
 .menu_box .menu ul {
     text-align: center;
     margin-left: -20%;
@@ -259,11 +199,8 @@ div.searchInputBox{
     font-size: 18px;
 }
 
-.menu_box .pc-header .menu ul li a,.login a {
+.menu_box .pc-header .menu ul li a {
     position: relative;
-    color: unset;
-    text-decoration: none;
-    background-color: unset;
 }
 
 .menu_box .pc-header .menu ul li a::after {
@@ -308,17 +245,16 @@ div.searchInputBox{
 }
 
 .nav-content {
-    border-top: 1px solid #ddd;
+
     position: fixed;
     left: 0;
-    top: 60px;
+    top: -30px;
     z-index: -1;
     width: 100%;
     bottom: 0;
     text-align: left;
     background-color: #FFFFFF;
     transition: all 1s;
-    opacity: 0;
     transform: translateY(100px);
     /* visibility: hidden; */
     -webkit-transition-duration: 1s;
@@ -339,7 +275,7 @@ div.searchInputBox{
 }
 
 .nav-content .menu_lab {
-    height: 60px;
+    /* height: 60px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -368,7 +304,7 @@ div.searchInputBox{
 .nav-content .content .close-icon {
     position: absolute;
     right: 64px;
-    top: -50px;
+    top: 15px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -384,7 +320,8 @@ div.searchInputBox{
 }
 
 .nav-content .content {
-    padding: 0 80px 50px 80px;
+    border-top: 1px solid #ddd;
+    padding: 40px 80px 50px 80px;
     position: relative;
 }
 
@@ -482,6 +419,9 @@ div.searchInputBox{
     /* margin-bottom: 16px; */
     background-color: #F5F5F5;
 }
+.nav-content .content .show-box .rg-content .img-box a{
+    height: 100%;
+}
 
 .nav-content .content .show-box .rg-content .lf-box,
 .nav-content .content .show-box .rg-content .rg-box {
@@ -489,31 +429,37 @@ div.searchInputBox{
     width: 100%;
     font-size: 0;
     overflow: hidden;
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: -moz-flex;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     position: relative;
 }
 
 .nav-content .content .show-box .rg-content .item-box {
     display: inline-block;
     position: relative;
-    width: 50%;
+    width: 21%;
+    margin: 1%;
+    float: left;
+    overflow: hidden;
     /* padding-bottom: 1%; */
     background-color: #F4F4F4;
 }
-
-.nav-content .content .show-box .rg-content .right_img.mobileImg {
-    width: 35%;
+.nav-content .content .show-box .rg-content .item-box:nth-child(1){
+    width: 50%;
+    margin: 1% 1% -2% 1%;
 }
 
+.nav-content .content .show-box .rg-content .right_img.mobileImg{
+    width: 35%;
+}
 .nav-content .content .show-box .rg-content .right_img {
-    position: absolute;
     width: 50%;
+    z-index: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -522,7 +468,13 @@ div.searchInputBox{
 .nav-content .content .show-box img {
     transition: all .8s;
 }
-
+.nav-content .content .show-box .rg-content .item-box:nth-child(1) .item-img{
+    height: 100%;
+    object-fit: cover;
+}
+.nav-content .content .show-box .rg-content .item-box:nth-child(1) .img-box{
+height: 100%;
+}
 .nav-content .box-lv1 .item-img {
     width: 100%;
 }
@@ -562,7 +514,11 @@ div.searchInputBox{
 }
 
 .nav-content .rg-content .item-title {
-    margin: 0;
+    position: absolute;
+    text-align: center;
+    z-index: 1111;
+    width: 100%;
+    bottom: 5%;
     font-size: 16px;
     color: #000;
     letter-spacing: .3px;
@@ -701,23 +657,19 @@ div.searchInputBox{
         padding: 0 20px 50px 20px;
     }
 }
-
-@media screen and (max-width:1000px) {
-    .header_main {
+@media screen and (max-width:1000px){
+    .header_main{
         width: 1000px;
     }
 }
-
 @media screen and (max-width: 800px) {
-    .foot-icon ul {
+    .foot-icon ul{
         padding-top: 4vw;
     }
-
-    .foot-list .ul_1 .li_1 ul {
+    .foot-list .ul_1 .li_1 ul{
         padding: 2vw 0;
         display: none;
     }
-
     .global {
         position: relative;
         right: auto;
@@ -727,9 +679,7 @@ div.searchInputBox{
         width: 100%;
         height: 27px;
     }
-
-    .footer_main,
-    .footerBox {
+    .footer_main, .footerBox{
         background-color: white;
         padding-top: 3vw;
     }
@@ -797,8 +747,7 @@ div.searchInputBox{
         right: 0;
     }
 
-    .foot-list,
-    .foot-icon {
+    .foot-list ,.foot-icon{
         width: 100%;
         height: auto;
     }
@@ -836,9 +785,7 @@ div.searchInputBox{
 
     .app-header {
         display: block;
-        /* padding: 0 15px; */
         height: 60px;
-        background-color: white;
         position: relative;
         border-bottom: 1px solid #ddd;
     }
@@ -943,6 +890,7 @@ div.searchInputBox{
 
     .app-header .menu {
         top: 60px;
+        background-color: white;
         width: 100%;
         display: none;
     }
@@ -972,8 +920,10 @@ div.searchInputBox{
     }
 
     .menu_box .app-header .menu ul li:not(.item-box) {
+        box-sizing: border-box;
         display: block;
         text-align: left;
+        width: 100%;
         padding: 0 15px;
         font-size: 18px;
         max-width: none;
@@ -996,6 +946,7 @@ div.searchInputBox{
 
     .menu_box .app-header .app-nav-content .rg-content .item-box img {
         width: 100%;
+        height: 100%;
     }
 
     .menu_box .app-header .app-nav-content .rg-content .item-box.box-lv3 img {
@@ -1018,7 +969,7 @@ div.searchInputBox{
     .menu_box .app-header .app-nav-content .lf-menu .main-menu li {
         border-bottom: none;
         line-height: 40px;
-        font-size: 14px;
+        font-size: 5vw;
     }
 
     .menu_box .app-header .app-nav-content .lf-menu .main-menu li:nth-child(1) {
@@ -1035,6 +986,7 @@ div.searchInputBox{
     .menu_box .app-header .app-nav-content .item-box .img-box {
         margin-right: 15px;
         width: 250px;
+        height: 100%;
     }
 
     .menu_box .app-header .app-nav-content .item-box.box-lv3 a {
@@ -1045,7 +997,9 @@ div.searchInputBox{
         background-color: #F6F6F6;
     }
 
-    .menu_box .app-header .app-nav-content .item-box.box-lv1 {}
+    .menu_box .app-header .app-nav-content .item-box.box-lv1 a{
+        height: 100%;
+    }
 
     .menu_box .app-header .app-nav-content .item-box {
         position: relative;

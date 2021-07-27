@@ -129,13 +129,19 @@ h6 {
 .main {
     background-color: #F5F5F5;
     min-height: 100vh;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .mainContent a,
 .mainContent a:hover {
     text-decoration: none;
     color: #000;
+}
+#alertBox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .mainContent p {
@@ -145,6 +151,7 @@ h6 {
 .mainContent {
     width: 1200px;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 .mainContent .navsMenu {
@@ -201,7 +208,7 @@ h6 {
     border: 1px solid #999999;
     border-radius: 3px;
     padding-left: 15px;
-    margin-top: 48px;
+    margin-top: 18px;
    
 }
 .comments_bottom{
@@ -235,7 +242,9 @@ h6 {
     width: 100px;
     margin: 0 10px;
 }
-
+.createPostBox .form-control.is-invalid,.createPostBox .was-validated .form-control:invalid{
+    background-image: none;
+}
 .createPostBox .modal-body {
     min-height: 100px;
     display: flex;
@@ -266,8 +275,11 @@ h6 {
     background: linear-gradient(90deg, #F010C7 0, #5D6BEF 50%, #0AC3F4 100%);
 }
 
-@media screen and (max-width:1000px)and (min-width:800px) {}
-
+@media screen and (max-width:1200px)and (min-width:800px) {
+    .mainContent{
+        width: 90%;
+    }
+}
 @media screen and (max-width:1000px) {
     .header_main {
         width: 1000px;

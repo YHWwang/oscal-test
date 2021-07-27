@@ -131,7 +131,7 @@ h6 {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    margin-top: 60px;
+    margin-top: 120px;
     background-color: #F5F5F5;
 }
 
@@ -216,22 +216,27 @@ img {
     padding: 2vw;
     margin-top: 5vw;
 }
-.postContent .comments .commentsTop{
+
+.postContent .comments .commentsTop {
     position: relative;
 }
-.postContent .comments .commentsTop .order{
+
+.postContent .comments .commentsTop .order {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
 }
-.postContent .comments .commentsTop .order svg{
+
+.postContent .comments .commentsTop .order svg {
     display: none;
     cursor: pointer;
 }
-.postContent .comments .commentsTop .order .active{
+
+.postContent .comments .commentsTop .order .active {
     display: block;
 }
+
 .postContent .comments .commentsTop span {
     font-size: 24px;
 }
@@ -381,6 +386,19 @@ img {
     height: 40px;
 }
 
+.alertSuccess {
+    position: fixed;
+    left: 50%;
+    z-index: 1111;
+    width: 400px;
+    top: 50%;
+    transform: translate(-50%);
+}
+
+.alertSuccess .alert-warning {
+    display: none;
+}
+
 .newsPagination {
     display: block;
     padding: 5vw 0 3vw 0;
@@ -478,6 +496,10 @@ img {
     margin: 0 auto;
 }
 
+.main .alert:not(.alert-warning) {
+    display: none;
+}
+
 .postContent .postMain .topBox {
     margin-top: 20px;
     background-color: white;
@@ -498,12 +520,18 @@ img {
 
 .postContent .postMain .icon span:not(:nth-child(1)) {
     vertical-align: middle;
+
+}
+
+.postContent .postMain .icon span.pageviews,
+.postContent .postMain .icon span.likes,
+.postContent .postMain .icon span.commentsIcon {
     margin: 0 10px;
 }
 
 .postContent .postMain .icon svg {
     margin-right: 5px;
-    vertical-align: top;
+    vertical-align: sub;
 }
 
 .postContent .postMain .lastReply {
@@ -520,7 +548,29 @@ img {
 .postContent .postMain .lastReply p {
     padding-left: 10px;
 }
+.BlogContentDetail{
+    width: 50%;margin: 0 auto;min-width: 800px;padding: 2vw 0 4vw 0;
 
+}
+.comments_bottom .note-modal-footer{
+    height: 60px;
+}
+.BlogContentDetail img{
+    width: 100%;
+}
+.postContent .postMain .postComments {
+    width: 780px;
+    overflow-y: hidden;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(242, 242, 242);
+}
+.postContent .postMain .postComments img{
+    max-width: 100%;
+}
+.postContent .postMain .postComments .table td{
+    border: 1px solid #dee2e6;
+}
 .postContent .postMain .shareBox {
     border-top: 1px solid #eeeeee;
     margin-top: 50px;
@@ -541,15 +591,15 @@ img {
     margin-right: 5px;
 }
 
-.shareSvg svg {
+.likesSvg svg {
     display: none;
 }
 
-.shareSvg.act {
+.likesSvg.act {
     color: red;
 }
 
-.shareSvg .active {
+.likesSvg .active {
     display: inline-block;
 }
 
@@ -636,9 +686,11 @@ img {
     text-align: left;
     color: #999999;
 }
-#rewardModal .modal-dialog{
+
+#rewardModal .modal-dialog {
     max-width: 280px;
 }
+
 #rewardModal .modal-body .coin span {
     float: right;
 }
@@ -733,7 +785,6 @@ img {
     color: #fff;
     text-decoration: none;
 }
-
 
 
 .communityBox .content-left {
@@ -1391,6 +1442,12 @@ img {
         width: 30%;
         margin-right: 10px;
         margin-left: 5px
+    }
+    .postContent {
+        width: 98%;
+    }
+    .postContent .postMain .postComments {
+        width: 100%;
     }
 }
 

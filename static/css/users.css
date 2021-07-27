@@ -129,7 +129,7 @@ h6 {
 .main {
     background-color: #F5F5F5;
     min-height: 100vh;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 .mainContent .usersInfo a{
     text-decoration: none;
@@ -139,6 +139,26 @@ h6 {
     color: #000;
 }
 
+.usersInfo .usersBox .userBtn {
+    margin-top: 21px;
+}
+
+.usersInfo .usersBox .userBtn button {
+    width: 117px;
+    height: 42px;
+    border-radius: 5px;
+    line-height: 42px;
+    padding: 0 5px;
+    margin: 0 10px;
+
+}
+
+.usersInfo .usersBox .userBtn .followBtn svg {
+    display: none;
+}
+.usersInfo .usersBox .userBtn .followBtn .followWord{
+    display: initial;
+}
 .mainContent {
     width: 1220px;
     margin: 0 auto;
@@ -247,7 +267,7 @@ h6 {
 
 .mainContent .usersInfo .usersBox {
     width: 360px;
-    height: 285px;
+    height: auto;
     background-color: #fff;
     padding: 20px;
 }

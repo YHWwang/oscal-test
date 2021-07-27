@@ -33,6 +33,12 @@
         </div> -->
     </div>
     <div id="AMain" class="main">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <p class="errorMsg"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         <div class="loginContent">
             <div class="logo">
                 <img src="../static/img/loginLogo.png" alt="logo">
@@ -51,7 +57,7 @@
                     </a>
                 </li>
             </ul>
-            <div class="tab-content border border-top-0" >
+            <div class="tab-content border border-top-0">
                 <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="home-tab">
                     <div class="loginTabs">
                         <form id="signInForm" class="needs-validation-signInForm" novalidate>
@@ -112,7 +118,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <div class="form-check" style="text-align: right;">
-                                        <span class="forgetPassword" >
+                                        <span class="forgetPassword">
                                             <a href="./forgotPwd.html" target="_self">
                                                 Forgot password?
                                             </a>
@@ -143,8 +149,8 @@
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control" maxlength="8" id="validationCustom05"
-                                                placeholder="Name" required>
+                                            <input type="text" class="form-control" maxlength="8"
+                                                id="validationCustom05" placeholder="Name" required>
                                             <div class="invalid-feedback">
                                                 Please enter your Name
                                             </div>
@@ -163,15 +169,15 @@
                                             </div>
                                             <input type="email" class="form-control" id="validationCustom03"
                                                 placeholder="Email" required>
-                                                <div class="invalid-feedback">
-                                                    Please enter the correct email format
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                Please enter the correct email format
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="mb-3 form-row">
                                         <div class="col-8">
-                                            <input type="text" class="form-control form-control-lg"
-                                                placeholder="Code" required>
+                                            <input type="text" class="form-control form-control-lg" placeholder="Code"
+                                                required>
                                             <div class="invalid-feedback">
                                                 Please enter Verification code
                                             </div>
@@ -193,9 +199,9 @@
                                             </div>
                                             <input type="text" class="form-control" id="validationCustom04"
                                                 placeholder="Password" pattern="[A-Za-z0-9]{6,30}" required>
-                                                <div class="invalid-feedback">
-                                                    The password must be at least six digits
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                The password must be at least six digits
+                                            </div>
                                             <div class="eyeIcon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
@@ -205,7 +211,7 @@
                                                         d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                                 </svg>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <button class="btn btn-primary loginSubmitBtn" type="submit">Sign up</button>
