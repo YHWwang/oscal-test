@@ -265,8 +265,8 @@ div.border {
     color: #0043A8;
 }
 
-#btnGroupAddon {
-    background-color: transparent;
+.btnGroupAddon {
+    background-color: transparent !important;
 }
 
 .loginContent .loginSubmitBtn {

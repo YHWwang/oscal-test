@@ -27,13 +27,18 @@ $(function () {
         ],
         callbacks:{
             onImageUpload: function (files) {
-                debugger
+                $('#maskLayer').show()
                 sendFile($summernote, files[0]);
             }
         }
       });
       //ajax上传图片
       function sendFile($summernote, file) {
+        var size = files[0].size;
+        if((size / 1024 / 1024) > 5) {
+            alert("Picture cannot exceed 5M...");
+            return false;
+        }
         var formData = new FormData();
         formData.append("file", file);
         $.ajax({
@@ -44,6 +49,7 @@ $(function () {
             processData: false,
             type: 'POST',
             success: function (data) {
+                $('#maskLayer').hide()
                 $summernote.summernote('insertImage', data, function ($image) {
                     $image.attr('src', data);
                 });

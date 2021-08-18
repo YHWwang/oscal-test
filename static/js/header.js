@@ -1,4 +1,5 @@
 $(function () {
+    
     VideoWith()
     switchProduct = function (proName) { // 显示对于的产品菜单块
         menuHide()

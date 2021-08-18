@@ -76,8 +76,8 @@ li {
     list-style: none;
 }
 
-a,
-a:hover {
+.main a,
+.main a:hover {
     text-decoration: none;
 }
 
@@ -382,13 +382,13 @@ h6 {
     color: #FFFFFF;
 }
 
-.forumContent .forum-right .hot_discussion,.forumContent .forum-right .sectorBox {
+.forumContent .forum-right .hot_sections,.forumContent .forum-right .hot_discussion,.forumContent .forum-right .sectorBox {
     margin-top: 20px;
     padding: 20px;
     background-color: white;
 }
 
-.forumContent .forum-right .hot_discussion .top_tit,.forumContent .forum-right .sectorBox .top_tit{
+.forumContent .forum-right .hot_sections .top_box,.forumContent .forum-right .hot_discussion .top_tit,.forumContent .forum-right .sectorBox .top_tit{
     position: relative;
     padding:0 0 1vw 0;
     width: 100%;
@@ -396,6 +396,47 @@ h6 {
     font-size: 20px;
     vertical-align: middle;
     font-weight: bold;
+}
+
+.forumContent .forum-right .hot_sections .top_box .tit img {
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.forumContent .forum-right .hot_sections .bottom_box ul {
+    font-size: 0;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.forumContent .forum-right .hot_sections .bottom_box ul li {
+    width: 25%;
+    margin-bottom: 1vw;
+    text-align: center;
+    display: inline-block;
+}
+
+.forumContent .forum-right .hot_sections .bottom_box ul li img {
+    width: 60px;
+    height: 60px;
+}
+
+.forumContent .forum-right .hot_sections .bottom_box {
+    padding: 1vw 0;
+}
+
+.forumContent .forum-right .hot_sections .bottom_box ul li p {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    display: block;
+    margin-top: 10px;
+    width: 90%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
 }
 
 .forumContent .forum-right .hot_discussion .post_list li {

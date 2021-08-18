@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>级联演示</title>
+	<!-- 引入线上layui -->
+	<link href="./layui/css/layui.css" rel="stylesheet">
+	<script src="./layui/layui.all.js"></script>
+
+	<style>
+		.main{
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+        <cascader id="demo1"></cascader>
+        <!-- <cascader id="demo2"></cascader> -->
+		<!-- <cascader id="demo3"></cascader> -->
+        <button class="layui-btn">提交</button>
+	</div>
+	<script>
+		layui.config({
+            base: './mods/ajaxCascader/'
+            ,version: '1.6'
+        });
+        layui.use(['jquery','ajaxCascader'],function(){
+            var $ = layui.jquery;
+        	var cascader = layui.ajaxCascader;
+
+            // Ajax传参模式
+        	cascader.load({
+                elem: '#demo1'
+                ,search: {
+                    show: true,
+                    // minLabel: 1,
+                    // placeholder: '请输入搜索词'
+                }
+                ,clear: true            
+                ,value: 0
+                ,getChildren: function(value,callback){  
+                    var data = []               
+                    $.ajax({                         
+                        url:'https://open.gog.cn/appz/region/getRegion/'+value,
+                        type:'get',
+                        success:function(res){
+                            data = res.data;
+                            for(var i in data){
+                                data[i].value = data[i].id;
+                                data[i].label = data[i].name;
+                                delete data[i].id;
+                                delete data[i].name;
+                                data[i].hasChild = true;
+                            }
+                            callback(data);
+                        }
+                    });
+                },
+                // chooseData: ["520000000000", "520100000000"]
+            });
+            
+            // 其他可选参数
+            // width:250  //input框宽度
+            // height:50  //input框高度
+            // placeholder // input框提示词
+            // prop:{
+            //     value:"value",     // 选择器要获取的字段名称
+            //     label:"label",     // 显示时的名称
+            //     children:'children' // 子集的名称定义
+            // }
+            // time:250    // 下拉菜单显示出来的时间
+            // showlast:false  // 是否只显示选中的最后一级
+            // clicklast:false // 是否最后一级才可点击
+            // checkData:['100','200'] // 回显数据
+
+            $('.layui-btn').click(function(){
+                console.log(cascader.getChooseData('#demo1'))
+            })
+
+          
+        });
+	</script>
+</body>
+</html>

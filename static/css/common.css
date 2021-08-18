@@ -155,9 +155,10 @@ img {
 
 .watch_video .box1 .tit,
 .watch_video .box1 .watch_vid,
-.mainContent .content .product_word .tit,
-.mainContent .content .product_word .msg,
-.mainContent .content .product_word .buy_href {
+.mainContent .product_word .tit,
+.mainContent .product_word .msg,
+.mainContent .product_word .msg2,
+.mainContent .product_word .buy_href {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease;
@@ -194,7 +195,9 @@ img {
 .delay-3 {
     transition-delay: .5s !important;
 }
-
+.delay-4 {
+    transition-delay: .7s !important;
+}
 .watch_video {
     background-color: #f0f0f0;
     position: relative;
@@ -358,6 +361,13 @@ img {
     color: gray;
 }
 
+.mainContent .content .product_word .msg2 {
+    font-size: 20px;
+    font-family: Avenir;
+    margin-top: 15px;
+    color: gray;
+}
+
 .mainContent .content .product_word .buy_href {
     margin-top: 65px;
 }
@@ -368,6 +378,7 @@ img {
 
 .mainContent .product_word .buy_href a:hover {
     color: #0043a8;
+    text-decoration: none;
 }
 
 .mainContent .content .product_word .buy_href .more,
@@ -513,9 +524,11 @@ img {
     .mainContent .content .product_word .msg {
         font-size: 5vw;
     }
-
+    .mainContent .content .product_word .msg2 {
+        font-size: 4vw;
+    }
     .mainContent .content {
-        height: 100vw;
+        height: 120vw;
         padding: 7vw 0 3vw;
     }
 

@@ -10,7 +10,14 @@ $(function () {
         })
     }, 200);
 
-
+    $('.eyeIcon').click(function(){
+        $(this).find('.active').removeClass('active').siblings().addClass('active')
+        if($(this).siblings('.form-control').attr('type') == 'password'){
+            $(this).siblings('.form-control').attr('type','text')
+        }else{
+            $(this).siblings('.form-control').attr('type','password')
+        }
+    })
     $('.loginContent .goSign a').click(function () {
         $('#profile-tab').click()
     })
@@ -125,8 +132,18 @@ $(function () {
                         email: event.currentTarget[1].value,
                         code: event.currentTarget[2].value,
                         passpword: event.currentTarget[3].value,
-
+                        rePasspword:event.currentTarget[4].value,
                     }
+                    if(data.passpword != data.rePasspword){
+                        event.currentTarget[3].value = ''
+                        event.currentTarget[4].value = ''
+                        $('.loginContent .alert-danger').show().find('.errorMsg').text('Inconsistent passwords')
+                        setTimeout(() => {
+                            $('.loginContent .alert-danger').hide()
+                        }, 2000);
+                        return false
+                    }
+                    console.log(data)
                     $.ajax({
                         type: "post",
                         url: "/web/user/login/userRegister",

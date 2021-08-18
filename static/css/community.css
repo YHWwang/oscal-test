@@ -385,6 +385,20 @@ img {
     width: 40px;
     height: 40px;
 }
+.sliceTitle{
+    width: 150px;
+    color: white;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    bottom: 10px;
+    right: 1%;
+    font-size: 16px;
+    text-align: right;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
 
 .alertSuccess {
     position: fixed;
@@ -912,9 +926,12 @@ img {
 
 .post-list li .user-info .user-right {
     float: right;
-    width: 36%;
+    width: 230px;
     height: 40px;
     text-align: right;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     line-height: 58px;
     font-size: 16px;
     color: #9d9d9d;
@@ -950,7 +967,6 @@ img {
 }
 
 .post-list li .user-info .user-right>span {
-    margin-left: 40px;
     height: 20px;
     line-height: 20px;
     position: relative;
@@ -962,6 +978,7 @@ img {
 
 .post-list li .user-info .user-right svg {
     margin-bottom: 2px;
+    vertical-align: sub;
 }
 
 .post-list li .user-info .user-right .browse_num,
@@ -1231,11 +1248,18 @@ img {
     max-width: 160px;
     width: 50%;
 }
+.content-right .hot_post .post_list .post_num svg{
+vertical-align: sub;
+}
+
 
 .content-right .hot_post .post_list .post_num,
 .postContent .right .hot_post .post_list .post_num {
     text-align: right;
     float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 12px;
     color: #9d9d9d;
     letter-spacing: 0;

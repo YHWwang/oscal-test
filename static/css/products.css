@@ -392,18 +392,39 @@ img {
     padding: 2vw 0;
 }
 .products-lists ul li .product-img{
-    width: 80%;
+    height: auto;
+    width: 60%;
     margin: 0 auto;
 }
 .products-lists ul li a img {
+    height: 100%;
+    min-height: 300px;
     display: none;
+    opacity: 0;
 }
 
 .products-lists ul li a img.on {
     display: block;
-    transition-delay: 1s;
+    opacity: 1;
+    display: block;
+    -webkit-animation-name: fadeIn;
+    /*动画名称*/
+    -webkit-animation-duration: 1s;
+    /*动画持续时间*/
+    -webkit-animation-iteration-count: 1;
+    /*动画次数*/
 }
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        /*初始状态 透明度为0*/
+    }
 
+    100% {
+        opacity: 1;
+        /*结尾状态 透明度为1*/
+    }
+}
 .products-lists ul li .product-img.on {
     background-image: url('../img/loading.gif');
     background-size: 15% 15%;
@@ -486,18 +507,39 @@ img {
 /* end */
 
 @media screen and (max-width: 800px) {
+    .products-lists ul li .product-img.on {
+        height: 150px;
+    }
+    .products-lists ul li .product-img {
+        width: 70%;
+    }
+    .products-lists ul li .product-color .on span {
+        width: 16px;
+        height: 16px;
+    }
+    .productsBox {
+        padding: 6vw 0;
+    }
     .products-lists ul li .products-name{
         font-size: 5vw;
+        margin-top: 10px;
     }
     .productsBox .products-sort .products-tabs a {
         margin-right: 0;
-        min-width: 125px;
+        height: 30px;
+        line-height: 30px;
+        min-width: 105px;
+    }
+    .productsBox .products-sort .products-tabs a.active span {
+        height: 30px;
+        line-height: 30px;
     }
     .productsBox .products-sort .products-tabs a.active span {
         padding: 0 10px;
     }
     .products-lists ul li {
         width: 49%;
+        padding: 5vw 0;
     }
     .productsBox .products-sort{
         min-width: auto;
@@ -517,9 +559,6 @@ img {
 }
 
 @media screen and (max-width:1200px)and (min-width:800px) {
-    .products-lists ul li .product-img{
-        width: 100%;
-    }
     .products-lists ul li .products-name {
         font-size: 3vw;
     }

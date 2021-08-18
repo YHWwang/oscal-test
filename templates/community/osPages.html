@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel='stylesheet' type='text/css' href='/OSCAL/oscal-test/static/css/osPages.css'>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel='stylesheet' type='text/css'
         href="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/css/bootstrap.min.css">
 </head>
@@ -24,13 +25,19 @@
                 </p>
                 <hr>
                 <div class="sort">
-                    <select class="form-control" id="category">
-                        <!-- 三级分类的列表 -->
+                    <div class="block">
+                        <span class="demonstration">默认 click 触发子菜单</span>
+                        <el-cascader
+                          v-model="value"
+                          :options="options"
+                          @change="handleChange"></el-cascader>
+                      </div>
+                    <!-- <select class="form-control" id="category">
                         <option selected num='1'>All Posts</option>
                         <option num='2'>分类2</option>
                         <option num='3'>分类3</option>
                         <option num='4'>分类4</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="forumList">
                     <ul>
@@ -311,6 +318,8 @@
 </body>
 <script src="/OSCAL/oscal-test/static/lib/js/jquery-3.3.1.min.js"></script>
 <script src="/OSCAL/oscal-test/static/js/osPages.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script async src="/OSCAL/oscal-test/static/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
 <script async
     src="https://d2kbvjszk9d5ln.cloudfront.net/yshop/upload/other/lazysizes.min-20201204070627489.js"></script>
